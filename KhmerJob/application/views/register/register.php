@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
+
 ?>
  
     <!-- MetisMenu CSS -->
@@ -9,6 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
    
 <!--     <link rel="stylesheet" type="text/css" href="<?php //echo base_url()?>assets/dist/css/bootstrap-datetimepicker.css">
  -->   
+
         <div class="container_fluid" style="margin:0px 25px 0px 25px;" ng-app="myApp" ng-controller="myCtrl">
             <div class="row">                                           
                     <?php if(isset($action)) echo form_open($action,array('id'=>'form','name'=>'form','method'=>'post'))?>
@@ -32,7 +35,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 </div><!--====End error msg ===-->
                                 <div class="col-lg-4">
                                   <label class="control-label">Account Code</label>
+
                                     <input readonly type="text" name="txtAccCode" id="txtAccCode" class="form-control input-sm" value="<?php $acc_code1=substr($acc_code,3);
+
                                   echo $acc_code1!=''?'KJ-'.str_pad($acc_code1+1,6,"0", STR_PAD_LEFT):'KJ-'.str_pad(1, 6, "0", STR_PAD_LEFT);
                                    ?>" name="">
                                 </div>
@@ -87,6 +92,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                   <div class="form-group">
                                     <label class="control-label">Date Of Birth</label>
                                     <div class='input-group datetimepicker'>
+
                                       <?php 
                                       echo form_input(array(
                                               'type'=>'text',
@@ -99,6 +105,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             ));
                                       //echo form_input("txtDOB","",array("class"=>"form-control input-sm datetimepicker","placeholder"=>"Data Of Birth","ng-model"=>"txtDOB","id"=>"txtDOB","required"=>""));
                                             ?>                                          
+
                                       <span class="input-group-addon">
                                       <span class="glyphicon glyphicon-calendar"></span>
                                       </span>                                
@@ -126,6 +133,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                   <?php echo form_textarea("txtAddr","",array("class"=>"form-control input-sm textarea","ng-model"=>"txtAddr","id"=>"txtAddr","required"=>""));?>                                
                                 </div>
                               </div>
+
                               <div class="row">
                                 <div class="col-lg-4">
                                   <div class="controls">
@@ -141,6 +149,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 </div>
                                 <div class="col-lg-1 pull-right" style="margin-top:77px;">
                                      <?php echo form_button("btn_go_product","Register",array("class"=>"btn btn-success  btn-sm","ng-click"=>"validation()"));?>                                   
+
                                 </div>
                               </div>
                               <div class="row">
@@ -177,10 +186,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <?php echo form_close()?>
             </div>
         </div>
+
         <script src="<?php echo base_url()?>assets/tinymce/tinymce.min.js"></script>
         <script src="<?php echo base_url()?>assets/bower_components/jquery/dist/jquery.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url()?>assets/dist/js/angular.min.js"></script>
        
+
         <script>  
             $("#datetimepicker6").on("dp.change", function (e) {
             $('#datetimepicker7').data("DateTimePicker").minDate(e.date);

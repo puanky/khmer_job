@@ -7,7 +7,9 @@
                         <h1 class="text-center">CV</h1>
                   
                 </a>  
+
              </div><!-- this Cv -->
+
 
             <div class="col-md-4">
                 <div class="row">

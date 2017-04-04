@@ -33,6 +33,15 @@ background-color: rgba(255, 152, 0, 0.37);
 #elevator:active {
 background-color: #C6C
 }
+
+ <script type="text/javascript">
+    $(function () {
+        $('.datetimepicker').datetimepicker({
+            format: 'YYYY-MM-DD'
+         });
+    });
+</script>
+
 </style>
 </div><!-- class container -->
 <footer id="footer">
@@ -141,6 +150,7 @@ background-color: #C6C
 <div id="elevator_item"> 
 	<a id="elevator" onclick="return false;" title="Back To Top"><span class="glyphicon glyphicon-chevron-up"></span></a> 
 </div>
+
 <script src="<?php echo base_url()?>assets/bower_components/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url()?>assets/dist/js/moment-with-locals.js"></script>
 <script type="text/javascript" src="<?php echo base_url()?>assets/dist/js/bootstrap-datetimepicker.js"></script>
@@ -153,6 +163,7 @@ background-color: #C6C
 <script src="<?php echo base_url()?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="<?php echo base_url()?>grid and list/js/cbpViewModeSwitch.js"></script>
 <script type="text/javascript">
+
  		$(function() {
 			$(window).scroll(function(){
 				var scrolltop=$(this).scrollTop();		
@@ -173,6 +184,7 @@ background-color: #C6C
              });
         });
     </script>
+
 	<script type="text/javascript">
 	    $(function () {
 	        $('.datetimepicker').datetimepicker({
@@ -180,3 +192,4 @@ background-color: #C6C
 	         });
 	    });
 	</script>
+
