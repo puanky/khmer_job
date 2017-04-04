@@ -23,6 +23,13 @@ class Account_m extends CI_Model
 			if($query->num_rows()>0){return $query->row();}
 		}
 	}
+	public function account_code()
+	{
+		$query=$this->db->get('tbl_account');
+		if($query->num_rows()>0){return $query->last_row();}				
+	}
+
+
 
 	public function validateemail($email)
 	{
@@ -56,13 +63,10 @@ class Account_m extends CI_Model
 	}
 
 
-	public function account_code()
-	{
-		$query=$this->db->get('tbl_account');
-		if($query->num_rows()>0){return $query->last_row();}				
-	}
+
 	public function add()
-	{
+	{	$status=1;
+
 		$data= array(	
 						"acc_code" => $this->input->post("txtAccCode"),
 						"acc_name" => $this->input->post("txtAccName"),
@@ -74,12 +78,14 @@ class Account_m extends CI_Model
 						"acc_addr" => $this->input->post("txtAddr"),
 						"acc_website" => $this->input->post("txtWebsite"),
 						"acc_dob" => $this->input->post("txtDOB"),
-						"acc_status" => $this->input->post("ddlStatus"),						
-						"acc_photo" =>!empty($this->input->post('txtImgName'))?$this->input->post('txtImgName'):"",
+
+						"acc_status" =>1,						
+						"acc_photo" =>!empty($this->input->post('txtImgName'))?$this->input->post('txtImgName'):"",					
 						"acc_desc" => $this->input->post("txtDesc"),												
 						"user_crea" => $this->userCrea,
 						"date_crea" => date('Y-m-d')
-						 );
+					);
+
 		$query=$this->db->insert("tbl_account",$data);		
 		if($query){return $query;}
 	}

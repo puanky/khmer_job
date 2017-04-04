@@ -1,20 +1,17 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+
+
+
 ?>
- <link href="<?php echo base_url()?>assets/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
     <!-- MetisMenu CSS -->
     <!-- Custom Fonts -->
       
-    </style>
-      <title>Easy jQuery PHP Captcha</title>
-        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
-        <link rel="stylesheet" href="css/main.css">
-        <script data-main="js/app" src="js/vendor/require.js"></script>
-<!--     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/dist/css/bootstrap-datetimepicker.css">
- -->    <script src="<?php echo base_url()?>assets/bower_components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url()?>assets/dist/js/moment-with-locals.js"></script>
-    <script type="text/javascript" src="<?php echo base_url()?>assets/dist/js/bootstrap-datetimepicker.js"></script>
-    <script type="text/javascript" src="<?php echo base_url()?>assets/dist/js/angular.min.js"></script>
+   
+<!--     <link rel="stylesheet" type="text/css" href="<?php //echo base_url()?>assets/dist/css/bootstrap-datetimepicker.css">
+ -->   
+
         <div class="container_fluid" style="margin:0px 25px 0px 25px;" ng-app="myApp" ng-controller="myCtrl">
             <div class="row">                                           
                     <?php if(isset($action)) echo form_open($action,array('id'=>'form','name'=>'form','method'=>'post'))?>
@@ -38,7 +35,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 </div><!--====End error msg ===-->
                                 <div class="col-lg-4">
                                   <label class="control-label">Account Code</label>
-                                    <input readonly="readonly" type="text" name="txtAccCode" id="txtAccCode" class="form-control input-sm" value="<?php $acc_code1=substr($acc_code,3);
+
+                                    <input readonly type="text" name="txtAccCode" id="txtAccCode" class="form-control input-sm" value="<?php $acc_code1=substr($acc_code,3);
+
                                   echo $acc_code1!=''?'KJ-'.str_pad($acc_code1+1,6,"0", STR_PAD_LEFT):'KJ-'.str_pad(1, 6, "0", STR_PAD_LEFT);
                                    ?>" name="">
                                 </div>
@@ -93,7 +92,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                   <div class="form-group">
                                     <label class="control-label">Date Of Birth</label>
                                     <div class='input-group datetimepicker'>
-                                      <?php echo form_input("txtDOB","",array("class"=>"form-control input-sm datetimepicker","placeholder"=>"Data Of Birth","ng-model"=>"txtDOB","id"=>"txtDOB","required"=>""));?>                                          
+
+                                      <?php 
+                                      echo form_input(array(
+                                              'type'=>'text',
+                                              'name'=>'txtDOB',
+                                              'id'=>'txtDOB',                 
+                                                      
+                                              'placeholder'=>'Enter Date of Birth here...',                 
+                                              'class'=>'form-control datetimepicker',
+                                              'label'=>'Date of Birth'                                              
+                                            ));
+                                      //echo form_input("txtDOB","",array("class"=>"form-control input-sm datetimepicker","placeholder"=>"Data Of Birth","ng-model"=>"txtDOB","id"=>"txtDOB","required"=>""));
+                                            ?>                                          
+
                                       <span class="input-group-addon">
                                       <span class="glyphicon glyphicon-calendar"></span>
                                       </span>                                
@@ -121,19 +133,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                   <?php echo form_textarea("txtAddr","",array("class"=>"form-control input-sm textarea","ng-model"=>"txtAddr","id"=>"txtAddr","required"=>""));?>                                
                                 </div>
                               </div>
-                              <div class="control-group">
-                                  <div class="controls">
-                                      <label class="" for="captcha">*Please enter the verication code shown below.</label>
-                                      <div id="captcha-wrap">
-                                          <img src="img/refresh.jpg" alt="refresh captcha" id="refresh-captcha" /> <img src="php/newCaptcha.php" alt="" id="captcha" />
-                                      </div>
-                                      <input class="narrow text input" id="captcha" name="captcha" type="text" placeholder="Verification Code">
-                                  </div>
-                              </div>
+
                               <div class="row">
-                                <div class="col-lg-4 pull-right" style="margin:5px;">                                    
-                                 <a class="btn btn-default pull-right btn-sm" href="<?php echo base_url("home"); ?>">Cancel</a>
-                                  <?php echo form_button("btn_go_product","Register",array("class"=>"btn btn-success  btn-sm","ng-click"=>"validation()"));?>                                   
+                                <div class="col-lg-4">
+                                  <div class="controls">
+                                      <label class="" for="captcha"></label>
+                                      <div id="captcha-wrap">
+                                         <img src="/KhmerJob/assets/captcha/php/newCaptcha.php" alt="" id="captcha" />
+                                      </div>
+                                      <input class="narrow text input form-control" id="captcha" name="captcha" type="text" placeholder="Code">
+                                  </div>
+                                </div>
+                                <div class="col-lg-2 pull-right" style="margin-top:77px;">                                    
+                                    <a class="btn btn-default pull-right btn-sm" href="<?php echo base_url("home"); ?>">Cancel</a>
+                                </div>
+                                <div class="col-lg-1 pull-right" style="margin-top:77px;">
+                                     <?php echo form_button("btn_go_product","Register",array("class"=>"btn btn-success  btn-sm","ng-click"=>"validation()"));?>                                   
+
                                 </div>
                               </div>
                               <div class="row">
@@ -172,6 +188,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
 
         <script src="<?php echo base_url()?>assets/tinymce/tinymce.min.js"></script>
+        <script src="<?php echo base_url()?>assets/bower_components/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url()?>assets/dist/js/angular.min.js"></script>
+       
+
         <script>  
             $("#datetimepicker6").on("dp.change", function (e) {
             $('#datetimepicker7').data("DateTimePicker").minDate(e.date);

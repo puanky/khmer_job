@@ -5,12 +5,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	{
 		 function __construct(){
 			parent::__construct();
-			$this->load->model('account_m','acc');
-			$this->load->model('contact_us_m','ct');
-			$this->load->model('about_us_m','au');
-			$this->load->model('ads_setup_m',"ads");
-			$this->load->model('promotion_m',"pt");
-			$this->load->model('FAQ_m');
+
+			$this->load->model('front/account_m','acc');
+			$this->load->model('front/contact_us_m','ct');
+			$this->load->model('front/about_us_m','au');
+			$this->load->model('front/ads_setup_m',"ads");
+			$this->load->model('front/promotion_m',"pt");
+			$this->load->model('front/FAQ_m');
+			/*$this->load->model('fornt/post_cv','pcv');*/
+
 		}
 		function session(){
 			if(isset($_POST["kh"])){
@@ -63,7 +66,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		}
 		public function job(){
 			$this->switch_language();       
-			//$this->load->view('layout_site/cv_job_skill'); 
+
+			$this->load->view('layout_site/cv_job_skill'); 
+
 			/*$this->load->view('layout_site/search_filter'); */
 			$this->load->view('job/job');
 			//$this->load->view('layout_site/advertising'); 

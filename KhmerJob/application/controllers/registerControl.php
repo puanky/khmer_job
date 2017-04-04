@@ -6,7 +6,9 @@
 			parent::__construct();
 			$this->pageHeader='Member';		
 			$this->page_redirect="registerControl";							
-			$this->load->model("account_m","am");
+
+			$this->load->model("front/account_m","am");
+
 			$this->userLog="Admin";
 		}
 		function index(){
