@@ -18,7 +18,7 @@
 						<label>Priority:</label>
 					</div>
 					<div class="col-md-6">
-						<select class="form-control">
+						<select class="form-control input-sm">
 							<option>Premium</option>
 							<option>Standard</option>
 						</select>
@@ -29,7 +29,7 @@
 						<label>Duration:</label>
 					</div>
 					<div class="col-md-6">
-						<select class="form-control">
+						<select class="form-control input-sm">
 							<option>15 days</option>
 							<option>30 days</option>
 						</select>
@@ -41,22 +41,22 @@
 						<label>Job Title:</label>
 					</div>
 					<div class="col-md-6">
-						<input type="text" class="form-control">
+						<?php echo form_input('job_title', set_value('job_title'),'class="form-control input-sm" placeholder="Job Title..." autocomplete="off" ')?>
 					</div>
 
 				 </div>
 				<div class="row" style="margin-top: 10px;">
 					<div class="col-md-12">
 						<label>Job Description:</label>
-						<textarea class="form-control"></textarea>
+						<?php echo form_textarea('job_descr', set_value('job_descr'))?>
 					</div>
 					<div class="col-md-12">
 						<label>Requirement:</label>
-						<textarea class="form-control"></textarea>
+						<?php echo form_textarea('requirement', set_value('requirement'))?>
 					</div>
 					<div class="col-md-12">
 						<label>Other Benafits</label>
-						<textarea class="form-control"></textarea>
+						<?php echo form_textarea('benafits', set_value('benafits'))?>
 					</div>
 				
 				 </div>
@@ -68,7 +68,7 @@
 									<label>Contact Name:</label>
 								</div>
 								<div class="col-md-6">
-									<input type="text" class="form-control">
+									<?php echo form_input('contact_name', set_value('contact_name'),'class="form-control input-sm" placeholder="Contact Name..." autocomplete="off" ')?>
 								</div>
 
 						 	</div>
@@ -80,7 +80,7 @@
 									<label>Phone:</label>
 								</div>
 								<div class="col-md-6">
-									<input type="text" class="form-control">
+									<?php echo form_input('phone', set_value('phone'),'class="form-control input-sm" placeholder="Phone Number..." autocomplete="off" ')?>
 								</div>
 
 						 	</div>
@@ -91,7 +91,7 @@
 									<label>Email:</label>
 								</div>
 								<div class="col-md-6">
-									<input type="text" class="form-control">
+									<?php echo form_input('email', set_value('email'),'class="form-control input-sm" placeholder="Your email..." autocomplete="off" ')?>
 								</div>
 
 						 	</div>
@@ -102,7 +102,7 @@
 									<label>Adress:</label>
 								</div>
 								<div class="col-md-6">
-									<input type="text" class="form-control">
+									<?php echo form_input('email', set_value(''),'class="form-control input-sm" placeholder="Your Address..." autocomplete="off" ')?>
 								</div>
 
 						 	</div>
@@ -118,7 +118,7 @@
 									<label>Posting Date:</label>
 								</div>
 								<div class="col-md-6">
-									<input type="date" class="form-control">
+									<input type="date" class="form-control input-sm">
 								</div>
 
 						 	</div>
@@ -130,7 +130,7 @@
 									<label>End Date:</label>
 								</div>
 								<div class="col-md-6">
-									<input type="date" class="form-control">
+									<input type="date" class="form-control input-sm">
 								</div>
 						 	</div>
 						</div>
@@ -140,7 +140,7 @@
 									<label>Contract:</label>
 								</div>
 								<div class="col-md-6">
-									<select class="form-control">
+									<select class="form-control input-sm">
 										<option>Full Time</option>
 										<option>Part Time</option>
 										<option>Less Than 3 months</option>
@@ -159,7 +159,7 @@
 									<label>Gender:</label>
 								</div>
 								<div class="col-md-6">
-									<select class="form-control">
+									<select class="form-control input-sm">
 										<option>Male</option>
 										<option>Female</option>
 										<option>Unspecifid</option>
@@ -174,7 +174,7 @@
 									<label>Age:</label>
 								</div>
 								<div class="col-md-6">
-									<select class="form-control">
+									<select class="form-control input-sm">
 										<option>18 - 25</option>
 										<option>25 - 32</option>
 										<option>32 - 37</option>
@@ -192,7 +192,7 @@
 									<label>Salary Range:</label>
 								</div>
 								<div class="col-md-6">
-									<select class="form-control">
+									<select class="form-control input-sm">
 										<option>150$ - 300$</option>
 										<option>300$ - 500$</option>
 										<option>500$ - 750$</option>
@@ -209,7 +209,7 @@
 									<label>Years of Experience:</label>
 								</div>
 								<div class="col-md-6">
-									<select class="form-control">
+									<select class="form-control input-sm">
 										<option>1 - 2 Years</option>
 										<option>2 - 3 Years</option>
 										<option>3 - 5 Years</option>
@@ -228,7 +228,7 @@
 									<label>Education:</label>
 								</div>
 								<div class="col-md-6">
-									<select class="form-control">
+									<select class="form-control input-sm">
 										<option>PHD</option>
 										<option>Master</option>
 										<option>Bachelor</option>
@@ -246,7 +246,7 @@
 									<label>Language:</label>
 								</div>
 								<div class="col-md-6">
-									<select class="form-control">
+									<select class="form-control input-sm">
 										<option>Khmer</option>
 										<option>English</option>
 										<option>Thai</option>
@@ -261,7 +261,7 @@
 									<label>Hiring Quantities:</label>
 								</div>
 								<div class="col-md-6">
-									<input type="text" class="form-control">
+									<?php echo form_input('quantities', set_value('quantities'),'class="form-control input-sm" placeholder="Your quantities..." autocomplete="off" ')?>
 								</div>
 						 	</div>
 						</div>
@@ -271,7 +271,7 @@
 									<label>Category:</label>
 								</div>
 								<div class="col-md-6">
-									<select class="form-control">
+									<select class="form-control input-sm">
 										<option>Automotive</option>
 										<option>Engineering</option>
 										<option>IT (web developer)</option>
@@ -285,7 +285,7 @@
 									<label>Location:</label>
 								</div>
 								<div class="col-md-6">
-									<select class="form-control">
+									<select class="form-control input-sm">
 										<option>Phnom Penh</option>
 										<option>Preah Sihanouk</option>
 										<option>Kampong Cham</option>
@@ -301,9 +301,9 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="col-md-10">
-							<button class="btn btn-primary">Preview</button>
-							<button class="btn btn-primary">Delete</button>
-							<button class="btn btn-primary">Save</button>
+							<button class="btn btn-primary"><i class="fa fa-external-link-square"></i> Preview</button>
+							<button class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</button>
+							<button class="btn btn-primary"><i class="fa fa-floppy-o"></i> Save</button>
 						</div>
 						<div class="col-md-2">
 							<button class="btn btn-primary">Submit</button>
@@ -311,13 +311,13 @@
 					</div>
 				</div><hr />
 				<div class="row">
-					<table class="table table-bordered table-hover table-striped dataTable no-footer">
+					<table class="table table-bordered">
 	       				
 	       					<tr>
 	       						<td>billing</td>
 	       						
-	       						<td colspan="3">Information</td>
-	       						<td>End Date:</td>
+	       						<td colspan="3">Information </td>
+	       						<td>Neet VAT<input style="margin-left: 25px;" type="radio"><br />No Neet VAT <input type="radio"></td>
 	       						
 	       					</tr>
 	       					<tr>

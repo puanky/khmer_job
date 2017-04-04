@@ -34,7 +34,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							foreach ($ctrl as $row) {
 								if(!isset($row[0]['type']))
 								{
-									if ($row['type']=='text' || $row['type']=="email" || $row['type']=='date') {
+									if ($row['type']=='text' || $row['type']=="email") {
 										echo "<div class='col-lg-4'>";
 										echo "<div class='form-group'>";
 										echo "<label>".$row['label']."</label>";

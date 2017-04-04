@@ -43,9 +43,9 @@
                                     }
                                     echo "<td>";
                             ?>
-                                     	<?php if(isset($action_url[3])){ ?><a href="<?php if(isset($action_url)){echo base_url($action_url[3]).'/'.$body[$j];}?>" class="btn btn-warning" style="margin-right:5px">Change Password</a><?php }?>
-                                        <a href="<?php if(isset($action_url)){echo base_url($action_url[1]).'/'.$body[$j];}?>" class="btn btn-primary" style="margin-right:5px">Edit</a>
-                                        <a href="<?php if(isset($action_url)){echo base_url($action_url[2]).'/'.$body[$j];}?>" class="btn btn-danger btn-large confirModal del" data-confirm-title="Confirm Delete !" data-confirm-message="Are you sure you want to Delete this ?">Delete</a>
+                                     	<?php if(isset($action_url[3])){ ?><a href="<?php if(isset($action_url)){echo base_url($action_url[3]).'/'.$body[$j];}?>" style="margin-right:5px" title="Change password"><i class="fa fa-lock"></i></a><?php }?>
+                                        <?php if(isset($action_url[1])){ ?><a href="<?php if(isset($action_url)){echo base_url($action_url[1]).'/'.$body[$j];}?>" style="margin-right:5px" title="Edit"><i class="fa fa-pencil"></i></a><?php }?>
+                                        <?php if(isset($action_url[2])){ ?><a href="<?php if(isset($action_url)){echo base_url($action_url[2]).'/'.$body[$j];}?>" class="btn btn-large confirModal del" title="Delete" data-confirm-title="Confirm Delete !" data-confirm-message="Are you sure you want to Delete this ?"><i class="fa fa-trash"></i></a></a><?php }?>                                        
                             <?php
                                     echo "</td>";                                    
                                 echo "</tr>";

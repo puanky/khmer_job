@@ -43,8 +43,8 @@
                                     }                                   
                                     echo "<td>";
                             ?>
-                                     	<?php if(isset($action_url[3])){ ?><a href="<?php if(isset($action_url)){echo base_url($action_url[3]).'/'.$body[$j];}?>" class="btn btn-warning" style="margin-right:5px">Change Password</a><?php }?>
-                                        <a href="<?php if(isset($action_url)){echo base_url($action_url[1]).'/'.$body[$j];}?>" class="btn btn-primary" style="margin-right:5px">Edit</a>
+                                     	<?php if(isset($action_url[3])){ ?><a href="<?php if(isset($action_url)){echo base_url($action_url[3]).'/'.$body[$j];}?>" style="margin-right:5px"><i class="fa fa-key"></i></a><?php }?>
+                                        <a href="<?php if(isset($action_url)){echo base_url($action_url[1]).'/'.$body[$j];}?>" style="margin-right:5px"><i class="fa fa-pencil"></i></a>
                             <?php
                                     echo "</td>";                                    
                                 echo "</tr>";

@@ -4,17 +4,16 @@ class User_controller extends CI_Controller {
 	function __construct(){
 					parent::__construct();
 					$this->pageHeader='User';		
-					$this->cancelString = 'user_controller';
+					$this->cancelString = 'admin/user_controller';
 					$this->load->model('user_model','um');
 			 }
     public function index()
 	{
 		$this->load->view('template/header');
 		$this->load->view('template/left');
-		$page="index.php/admin/user_controller";
+		$page="admin/user_controller";
 		$data['pageHeader'] = $this->pageHeader;
-
-		$data["action_url"]=array("{$page}/add","{$page}/edit","{$page}/delete","{$page}/change_password");
+		$data["action_url"]=array(0=>"{$page}/add",1=>"{$page}/edit",3=>"{$page}/change_password");
 		$data["tbl_hdr"]=array("User name","User Code","Descr","Type","Status","User create","Date create","User update","Date update");	
 		$id="";	
 		$row=$this->um->index($id);		
@@ -24,8 +23,8 @@ class User_controller extends CI_Controller {
 										$value->user_name,
 										$value->user_code,
 										$value->user_desc,
-										$value->user_type,
-										$value->user_status,
+										$value->user_type,										
+										$value->user_status==1?'Enable':'Disable',
 										$value->user_crea,
 										$value->date_crea,
 										$value->user_updt,
@@ -34,7 +33,7 @@ class User_controller extends CI_Controller {
 									);
 		    $i=$i+1;
 		endforeach;								
-		$this->load->view('admin/page_user_view',$data);
+		$this->load->view('admin/page_view',$data);
 		$this->load->view('template/footer');
     }
     public function add()
@@ -43,7 +42,7 @@ class User_controller extends CI_Controller {
 		$option= array('1'=>'Enable','0'=>'Disable');
 		$option1=array(''=>'User Type','admin'=>'admin','general'=>'general','editer'=>'editer','super'=>'super');
 		$data['ctrl'] = $this->createCtrl($row,$option,$option1);
-		$data['action'] = 'index.php/admin/user_controller/add';
+		$data['action'] = 'admin/user_controller/add';
 		$data['pageHeader'] = $this->pageHeader;		
 		$data['cancel'] = $this->cancelString;
 		if(isset($_POST['btnSubmit']))
@@ -58,7 +57,7 @@ class User_controller extends CI_Controller {
 				$this->load->view('template/footer');
 			   }else{
 			   	$this->um->user_create();	
-				redirect('index.php/admin/user_controller');
+				redirect('admin/user_controller');
 			   }
 		}else
 		{
@@ -66,7 +65,7 @@ class User_controller extends CI_Controller {
 			$this->load->view('template/header');
 			$this->load->view('template/left');
 			$this->load->view('admin/page_add',$data);
-			$this->load->view('template/footer');
+			$this->load->view('template/footer');			
 		}
 	}
 	public function edit($id){
@@ -76,7 +75,7 @@ class User_controller extends CI_Controller {
 		 	$row=$this->um->index($id);
 		 }
 		$data['ctrl'] = $this->createCtrl($row,$option,$option1);
-		$data['action'] = "index.php/admin/user_controller/edit/{$id}";
+		$data['action'] = "admin/user_controller/edit/{$id}";
 		$data['pageHeader'] = $this->pageHeader;		
 		$data['cancel'] = $this->cancelString;
 		if(isset($_POST['btnSubmit']))

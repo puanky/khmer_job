@@ -126,6 +126,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <script>
 	$("#btnCancel").click(function(){
-    	window.location.assign('<?php echo $cancel?>');
+    	window.location.assign('<?php echo base_url().$cancel?>');
 	});
 </script>
