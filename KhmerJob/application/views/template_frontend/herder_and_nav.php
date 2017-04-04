@@ -4,22 +4,70 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
     <title>Khmer Job</title>
-    
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/dist/css/bootstrap-datetimepicker.css">
+    <link href="<?php echo base_url()?>assets/bower_components/bootstrap/dist/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="<?php echo base_url()?>assets/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <link href="<?php echo base_url()?>assets/bower_components/bootstrap/dist/css/animate_category.min.css" rel="stylesheet">
     <link href="<?php echo base_url()?>assets/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url()?>assets/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="<?php echo base_url()?>assets/bower_components/bootstrap/dist/css/style.css" rel="stylesheet" type="text/css">
     <link href="<?php echo base_url()?>assets/bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet">
-    <link href="<?php echo base_url()?>grid and list/css/component.css" rel="stylesheet">
-    <script src="<?php echo base_url()?>assets/bower_components/bootstrap/dist/js/jquery.js"></script>
-    <script src="<?php echo base_url('assets/tinymce/tinymce.min.js')?>"></script>
-   <!--  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
-
+    <link href="<?php echo base_url()?>grid and list/css/component.css" rel="stylesheet">   <!--  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+   <style type="text/css">
+    li.page:hover{
+        background: rgba(24, 24, 25, 0.32);
+    }
+    li.activepage{
+        background: rgba(24, 24, 25, 0.32);
+    }
+</style>
 </head>
-<body  ng-app="myApp" ng-controller="myCtrl" ng-init="cartItem=0" ng-cloak>
+<body >
+<?php 
+    $home = "page";
+    $about = "page";
+    $service = "page";
+    $advertisement = "page";
+    $payment = "page";
+    $promotion = "page";
+    $contact_us = "page";
+    $FAQ = "page";
+    $menuLinkid=basename($_SERVER['PHP_SELF'],".php");
+    if($menuLinkid=="home")
+    {
+        $home = "activepage";
+    }
+    elseif($menuLinkid=="about") 
+    {
+       $about = "activepage";
+
+    }elseif($menuLinkid=="service") 
+    {
+       $service = "activepage";
+
+    }elseif ($menuLinkid=="advertisement") 
+    {
+       $advertisement = "activepage";
+
+    }elseif($menuLinkid=="payment")
+    {
+        $pament ="activepage";
+
+    }elseif ($menuLinkid=="promotion") 
+    {
+      $promotion ="activepage";
+
+    }elseif ($menuLinkid=="contact_us") 
+    {
+        $contact_us = "activepage";
+    }
+    elseif ($menuLinkid=="FAQ") 
+    {
+        $FAQ = "activepage";
+    }
+
+?>
     <div class="container" style="background: #fff">
         <div class="row" style="margin-bottom: 10px">
             <div class="col-md-12">
@@ -33,16 +81,14 @@
                         <img src="<?php echo base_url('assets/uploads/advertising.png');?>" style="width: 100%">
                     </div><!-- advertising -->
                     <div class="col-sm-2 col-md-1" style="margin-top: 6px;">
-                        <div class="row">
-                            <a class="swing" href="">
-                                <img  src="<?php echo base_url('assets/leng/Cambodia.png');?>">​ Khmer
-                            </a>
-                        </div>
-                        <div class="row" style="margin-top: 15px;">
-                            <a href="">
-                                <img src="<?php echo base_url('assets/leng/en.png');?>"> English
-                            </a>
-                        </div>
+                        <form action="<?php echo base_url("home/session");?>" method="POST">
+                            <div class="row">
+                                <button name="kh"><img  src="<?php echo base_url('assets/leng/Cambodia.png');?>">​ Khmer</button>
+                            </div>
+                            <div class="row" style="margin-top: 15px;">
+                                <button name="eng"><img src="<?php echo base_url('assets/leng/en.png');?>">English</button>
+                            </div>
+                        </form>
                     </div><!-- Leng -->
                 </div>
             </div>
@@ -60,16 +106,15 @@
                         </button>
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="<?php echo base_url('home');?>">Home</a></li>
-                            <li><a href="">About Us</a></li>
-                            <li><a href="<?php echo base_url('home/service');?>">Services</a></li>
-                            <li><a href="<?php echo base_url('home/advertisement');?>">Advertisement</a></li>
-                            <li><a href="">Payment</a></li>
-                            <li><a href="<?php echo base_url('home/promotion');?>">Promotion</a></li>
-                            <li><a href="<?php echo base_url('home/contact');?>">Contact Us</a></li>
-                            <li><a href="">FAQ</a></li>
-                            
+                        <ul class="nav navbar-nav" style="background-color:screen">
+                            <li class="<?php echo $home?>"><a href="<?php echo base_url('home');?>">Home</a></li>
+                            <li class="<?php echo $about?>" ><a href="<?php echo base_url('home/about');?>">About Us</a></li>
+                            <li class="<?php echo $service?>"><a href="<?php echo base_url('home/service');?>">Services</a></li>
+                            <li class="<?php echo $advertisement?>"><a href="<?php echo base_url('home/advertisement');?>">Advertisement</a></li>
+                            <li class="<?php echo $payment?>"><a href="">Paymet</a></li>
+                            <li class="<?php echo $promotion?>"><a href="<?php echo base_url('home/promotion');?>">Promotion</a></li>
+                            <li class="<?php echo $contact_us?>"><a href="<?php echo base_url('home/contact_us');?>">Contact Us</a></li>
+                            <li class="<?php echo $FAQ?>"><a href="<?php echo base_url('home/FAQ'); ?>">FAQ</a></li>
                         </ul>
                     </div>
                 </nav>

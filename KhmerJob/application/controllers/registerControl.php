@@ -18,14 +18,14 @@
 			$data['pageHeader'] = $this->pageHeader;
 			$data['cancel'] = "{$this->page_redirect}/acc_log";	
 			if($this->session->language=="eng"){
-				$this->load->view("layout_site/herder_and_nav");
+				$this->load->view("template_frontend/herder_and_nav");
 			}else{
-				$this->load->view("layout_site/herder_and_nav_kh");
+				$this->load->view("template_frontend/herder_and_nav_kh");
 			} 	
-			$this->load->view('layout_site/left'); 
+			$this->load->view('template_frontend/left'); 
 			$this->load->view('register/register',$data);
-			/*$this->load->view('layout_site/advertising');*/
-			$this->load->view('layout_site/footer');
+			/*$this->load->view('template_frontend/advertising');*/
+			$this->load->view('template_frontend/footer');
 		}// redirect to register page
 
 		function add()
