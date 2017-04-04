@@ -27,6 +27,7 @@ class Category_m extends CI_Model
 		$data= array(
 						"cat_type" => $this->input->post("ddlCategoryType"),
 						"cat_name" => $this->input->post("txtCategoryName"),
+						"cat_name_kh" => $this->input->post("txtCategoryNameKh"),
 						"cat_desc" => $this->input->post("txtDesc"),						
 						"user_crea" => $this->userCrea,
 						"date_crea" => date('Y-m-d')
@@ -42,6 +43,7 @@ class Category_m extends CI_Model
 			$data= array(
 					"cat_type" => $this->input->post("ddlCategoryType"),
 					"cat_name" => $this->input->post("txtCategoryName"),
+					"cat_name_kh" => $this->input->post("txtCategoryNameKh"),
 					"cat_desc" => $this->input->post("txtDesc"),						
 					"user_updt" => $this->userCrea,
 					"date_updt" => date('Y-m-d')

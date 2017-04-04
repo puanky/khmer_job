@@ -1,7 +1,8 @@
 <div class="row">
 	<div class="">
 		<div class="col-sm-6 col-md-2">
-			<a href="<?php echo base_url('home/postskill');?>" class="thumbnail" style="padding: 25px;">Post Skill</a>
+		<!-- <button type="button" class="btn btn-primary btn-lg">Large button</button> -->
+			<a href="<?php echo base_url('home/postskill');?>" class="btn btn-primary btn-md">Post Skill</a>
 		</div>
 		<div class="col-md-9"></div>
 		<div class="col-md-1">
@@ -13,7 +14,8 @@
 <div class="row">
 	<div class="col-sm-8 col-md-8" style="padding-right: 0px;">
 		<div class="input-group">
-			<input type="text" class="form-control" placeholder="Search for...">
+			<?php echo form_input('name', set_value('name'),'class="form-control form-control-sm" placeholder="Search..." autocomplete="off" ')?>
+			
 			<span class="input-group-btn" >
 				<button class="btn btn-primary" type="button" style="border-radius: 0px;"><i class="fa fa-search" aria-hidden="true"></i></button>
 			</span>

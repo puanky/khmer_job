@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                	<p><b>Phone2: </b><?php echo $detail->phone2;?></p>
                                	<p><b>Phone3: </b><?php echo $detail->phone3;?></p>
                                 <p><b>Email: </b><?php echo $detail->email;?></p>
-                                <p><b>Facebook Manager: </b><?php echo $detail->fb_manager;?></p>                                     
+                                <p><b>Facebook Messager: </b><?php echo $detail->fb_messager;?></p>                                     
                                 <p><b>WhatApp: </b><?php echo $detail->whatApp;?></p>
                                 <p><b>Line: </b><?php echo $detail->line;?></p>                                        
                                 <p><b>Viber: </b><?php echo $detail->viber;?></p>                                                                                                                                                

@@ -15,7 +15,7 @@ class Account_c extends CI_Controller
 		$this->load->view('template/left');		
 		$data['pageHeader'] = $this->pageHeader;
 		$data["action_url"]=array(0=>"{$this->page_redirect}/add",1=>"{$this->page_redirect}/edit",/*2=>"{$this->page_redirect}/delete"*/3=>"{$this->page_redirect}/change_password");							
-		$data["tbl_hdr"]=array("account code","account name","position","photo","account status","User create","Date create","User update","Date update");		
+		$data["tbl_hdr"]=array("account code","account name","Company","photo","account status","User create","Date create","User update","Date update");		
 		$row=$this->account_m->index();		
 		$i=0;
 		if($row==TRUE)
@@ -24,7 +24,7 @@ class Account_c extends CI_Controller
 			$data["tbl_body"][$i]=array(
 										"<a href=".base_url($this->page_redirect.'/account_detail/'.$value->acc_id)." title='Account Detail'>".$value->acc_code."</a>",																														
 										$value->acc_name,
-										$value->acc_position,
+										$value->acc_company,
 										"<img class='img-thumbnail' src='".base_url("assets/uploads/".$value->acc_photo)."' style='width:70px;' />",																				
 										$value->acc_status=='1'?'Enable':'Disable',																														
 										$value->user_crea,
@@ -208,7 +208,7 @@ class Account_c extends CI_Controller
 			{			
 					$row1=$row->acc_code;
 					$row2=$row->acc_name;
-					$row3=$row->acc_position;
+					$row3=$row->acc_company;
 					$row4=$row->acc_pass;
 					$row5=$row->acc_gender;
 					$row6=$row->acc_email;																																					
@@ -243,12 +243,12 @@ class Account_c extends CI_Controller
 								),
 							array(
 									'type'=>'text',
-									'name'=>'txtPosition',
-									'id'=>'txtPosition',									
-									'value'=>$row==""? set_value("txtPosition") : $row3,					
-									'placeholder'=>'Enter Position here...',									
+									'name'=>'txtCompany',
+									'id'=>'txtCompany',									
+									'value'=>$row==""? set_value("txtCompany") : $row3,					
+									'placeholder'=>'Enter Company here...',									
 									'class'=>'form-control',
-									'label'=>'Position'																								
+									'label'=>'Company'																								
 								),
 							array(
 									'type'=>'password',
@@ -308,9 +308,9 @@ class Account_c extends CI_Controller
 									'name'=>'txtDOB',
 									'id'=>'txtDOB',									
 									'value'=>$row==""? set_value("txtDOB") : $row9,					
-									'placeholder'=>'Enter DOB here...',									
+									'placeholder'=>'Enter Date of Birth here...',									
 									'class'=>'form-control datetimepicker',
-									'label'=>'DOB'																							
+									'label'=>'Date of Birth'																							
 								),
 							array(
 									'type'=>'dropdown',
@@ -350,7 +350,7 @@ class Account_c extends CI_Controller
 			{			
 					$row1=$row->acc_code;
 					$row2=$row->acc_name;
-					$row3=$row->acc_position;
+					$row3=$row->acc_company;
 					//$row4=$row->acc_pass;
 					$row5=$row->acc_gender;
 					$row6=$row->acc_email;																																					
@@ -385,12 +385,12 @@ class Account_c extends CI_Controller
 								),
 							array(
 									'type'=>'text',
-									'name'=>'txtPosition',
-									'id'=>'txtPosition',									
-									'value'=>$row==""? set_value("txtPosition") : $row3,					
-									'placeholder'=>'Enter Position here...',									
+									'name'=>'txtCompany',
+									'id'=>'txtCompany',									
+									'value'=>$row==""? set_value("txtCompany") : $row3,					
+									'placeholder'=>'Enter Company here...',									
 									'class'=>'form-control',
-									'label'=>'Position'																								
+									'label'=>'Company'																								
 								),							
 							array(
 									'type'=>'dropdown',

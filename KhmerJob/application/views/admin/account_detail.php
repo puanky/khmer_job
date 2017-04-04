@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<div class="col-lg-10">
                                 <p><b>Account code: </b><?php echo $detail->acc_code;?></p>
                                	<p><b>Account name: </b><?php echo $detail->acc_name;?></p>
-                                <p><b>Position: </b><?php echo $detail->acc_position;?></p>
+                                <p><b>Company: </b><?php echo $detail->acc_company;?></p>
                                 <p><b>Gender: </b><?php echo $detail->acc_gender=='m'?'Male':($detail->acc_gender=='f'?'Female':'Other');?></p>                                     
                                 <p><b>Email: </b><?php echo $detail->acc_email;?></p>
                                 <p><b>Phone: </b><?php echo $detail->acc_phone;?></p>                                        
