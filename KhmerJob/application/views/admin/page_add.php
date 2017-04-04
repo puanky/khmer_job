@@ -33,19 +33,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							foreach ($ctrl as $row) {
 								if(!isset($row[0]['type']))
 								{
-									if ($row['type']=='text' || $row['type']=="email" || $row['type']=='date') {
+									if ($row['type']=='text' || $row['type']=="email") {
 										echo "<div class='col-lg-4'>";
 										echo "<div class='form-group'>";
 										echo "<label>".$row['label']."</label>";
-										echo form_input($row);
+										echo form_input($row);										
 										echo "</div>";
-										echo "</div>";
+										echo "</div>";										
 									}elseif($row['type']=='password')
 									{
 										echo "<div class='col-lg-4'>";
 										echo "<div class='form-group'>";
 										echo "<label>".$row['label']."</label>";
-										echo form_password($row);
+										echo form_password($row);										
 										echo "</div>";
 										echo "</div>";
 									}
@@ -61,9 +61,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									elseif($row['type']=='dropdown')
 									{
 										echo "<div class='col-lg-4'>";
-										echo "<div class='form-group'>";
+										echo "<div class='form-group'>";										
 										echo "<label>".$row['label']."</label>";
-										echo form_dropdown($row['name'],$row['option'],'',$row['class']);
+										echo form_dropdown($row['name'],$row['option'],set_value($row['name']),$row['class']);										
 										echo "</div>";
 										echo "</div>";
 									}
@@ -73,7 +73,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										echo "<div class='col-lg-12'>";
 										echo "<div class='form-group'>";
 										echo "<label>".$row['label']."</label>";
-										echo form_textarea($row);
+										echo form_textarea($row);										
 										echo "</div>";
 										echo "</div>";
 									}
@@ -82,9 +82,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										echo "<div class='col-lg-4'>";
 										echo "<div class='form-group'>";
 										echo "<label>".$row['label']."</label><br/>";
-										echo '<button type="button" class="btn btn-default btn-md" data-toggle="modal" data-target="#myModal">
-  Upload Image
-</button>';
+										echo '<button type="button" class="btn btn-default btn-md" data-toggle="modal" data-target="#myModal">Upload Image</button>';
 										echo "</div>";
 										echo "</div>";
 									}
@@ -156,11 +154,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<?php echo form_submit('btnSubmit','Save','class="btn btn-success"');?>
 								<?php echo form_button('btnCancel','Cancel','id="btnCancel" class="btn btn-default"');?>
 							</div>
-						</div>
-						
-						
-						
-						
+						</div>																				
 						
 					</div>
 				</div>
@@ -169,6 +163,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 	</div>
 </div>
+
 <script>
 	function uploadFile() {
 		var formData = new FormData();
@@ -194,5 +189,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	$("#btnCancel").click(function(){
     	window.location.assign('<?php echo base_url().$cancel?>');
 	});
+	$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+});
 </script>
-
