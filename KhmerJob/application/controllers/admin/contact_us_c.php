@@ -138,7 +138,7 @@ class Contact_us_c extends CI_Controller
 					$row2=$row->phone2;
 					$row3=$row->phone3;
 					$row4=$row->email;					
-					$row5=$row->fb_manager;
+					$row5=$row->fb_messager;
 					$row6=$row->whatApp;
 					$row7=$row->line;
 					$row8=$row->viber;
@@ -185,12 +185,12 @@ class Contact_us_c extends CI_Controller
 								),
 							array(
 								'type'=>'text',
-								'name'=>'txtFbManager',
-								'id'=>'txtFbManager',									
-								'value'=>$row==""? set_value("txtFbManager") : $row5,					
-								'placeholder'=>'Enter Facebook manager here...',									
+								'name'=>'txtFbMessager',
+								'id'=>'txtFbMessager',									
+								'value'=>$row==""? set_value("txtFbMessager") : $row5,					
+								'placeholder'=>'Enter Facebook Messager here...',									
 								'class'=>'form-control',
-								'label'=>'Facebook manager'																								
+								'label'=>'Facebook Messager'																								
 							),
 							array(
 								'type'=>'text',

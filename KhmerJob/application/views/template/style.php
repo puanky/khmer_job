@@ -1,9 +1,4 @@
-<?php
-    if(!isset($this->session->userLogin))
-    {
-        redirect("index.php/userController/logout");
-    }
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 

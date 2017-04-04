@@ -15,7 +15,7 @@ class Category_c extends CI_Controller
 		$this->load->view('template/left');		
 		$data['pageHeader'] = $this->pageHeader;
 		$data["action_url"]=array(0=>"{$this->page_redirect}/add",1=>"{$this->page_redirect}/edit",2=>"{$this->page_redirect}/delete"/*,"{$this->page_redirect}/change_password"*/);							
-		$data["tbl_hdr"]=array("Category type","Category name","Description","User create","Date create","User update","Date update");		
+		$data["tbl_hdr"]=array("Category type","Item name","Item name khmer","Description","User create","Date create","User update","Date update");		
 		$row=$this->category_m->index();		
 		$i=0;
 		if($row==TRUE)
@@ -24,6 +24,7 @@ class Category_c extends CI_Controller
 			$data["tbl_body"][$i]=array(
 										$value->cat_type=='jb'?'JOB':($value->cat_type=='sk'?'SKILL':'CV'),
 										$value->cat_name,
+										$value->cat_name_kh,
 										$value->cat_desc,																				
 										$value->user_crea,
 										date("d-m-Y",strtotime($value->date_crea)),							
@@ -40,7 +41,7 @@ class Category_c extends CI_Controller
 	public function validation()
 	{		
 		$this->form_validation->set_rules('ddlCategoryType','Category type','trim|required');
-		$this->form_validation->set_rules('txtCategoryName','Category name','trim|required');
+		$this->form_validation->set_rules('txtCategoryName','Item name','trim|required');
 		if($this->form_validation->run()==TRUE){return TRUE;}
 		else{return FALSE;}
 	}	
@@ -126,7 +127,8 @@ class Category_c extends CI_Controller
 			{			
 					$row1=$row->cat_type;
 					$row2=$row->cat_name;
-					$row3=$row->cat_desc;																												
+					$row3=$row->cat_name_kh;
+					$row4=$row->cat_desc;																												
 			}											
 			//$ctrl = array();
 			$ctrl = array(
@@ -143,14 +145,23 @@ class Category_c extends CI_Controller
 									'name'=>'txtCategoryName',
 									'id'=>'txtCategoryName',									
 									'value'=>$row==""? set_value("txtCategoryName") : $row2,					
-									'placeholder'=>'Enter Category name here...',									
+									'placeholder'=>'Enter Item name here...',									
 									'class'=>'form-control',
-									'label'=>'Category name'																								
+									'label'=>'Item name'																								
+								),
+							array(
+									'type'=>'text',
+									'name'=>'txtCategoryNameKh',
+									'id'=>'txtCategoryNameKh',									
+									'value'=>$row==""? set_value("txtCategoryNameKh") : $row3,					
+									'placeholder'=>'Enter Item name khmer here...',									
+									'class'=>'form-control',
+									'label'=>'Item name khmer'																								
 								),							
 							array(
 									'type'=>'textarea',
 									'name'=>'txtDesc',
-									'value'=>$row==""? set_value("textarea") : $row3,
+									'value'=>$row==""? set_value("textarea") : $row4,
 									'label'=>'Description'
 								),
 							);

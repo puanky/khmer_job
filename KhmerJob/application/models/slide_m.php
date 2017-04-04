@@ -1,11 +1,10 @@
 <?php
 class Slide_m extends CI_Model
 {			
-	var $userCrea;		
+	private $userLog="admin";		
 	public function __construct()
 	{
-		parent::__construct();
-		$this->userCrea = isset($this->session->userLogin)?$this->session->userLogin:"N/A";				
+		parent::__construct();				
 	}
 	public function index($id="")
 	{
@@ -30,7 +29,7 @@ class Slide_m extends CI_Model
 						"slide_url" => $this->input->post("txtSlideUrl"),
 						"slide_path" =>!empty($this->input->post('txtImgName'))?$this->input->post('txtImgName'):"",
 						"slide_status" => $this->input->post("ddlStatus"),
-						"user_crea" => $this->userCrea,
+						"user_crea" => $this->userLog,
 						"date_crea" => date('Y-m-d')
 						 );
 		$query=$this->db->insert("tbl_slide",$data);		
@@ -50,7 +49,7 @@ class Slide_m extends CI_Model
 							"slide_url"=>$this->input->post("txtSlideUrl"),
 							"slide_path" =>!empty($this->input->post('txtImgName'))?$this->input->post('txtImgName'):"",
 							"slide_status"=>$this->input->post("ddlStatus"),
-							"user_updt"=>$this->userCrea,
+							"user_updt"=>$this->userLog,
 							"date_updt"=>date("Y-m-d")
 							);
 			}
@@ -61,7 +60,7 @@ class Slide_m extends CI_Model
 							"slide_desc"=>$this->input->post("txtDesc"),
 							"slide_url"=>$this->input->post("txtSlideUrl"),						
 							"slide_status"=>$this->input->post("ddlStatus"),
-							"user_updt"=>$this->userCrea,
+							"user_updt"=>$this->userLog,
 							"date_updt"=>date("Y-m-d")
 							);
 			}	

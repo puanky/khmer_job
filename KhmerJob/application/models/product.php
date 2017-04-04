@@ -77,10 +77,17 @@
 		}
 		public function product_page_detail($pro_id){
 			if($pro_id!==""){
-				$this->db->where('p_id',$pro_id);
-				$query=$this->db->get("tbl_product");
+				$query=$this->db->query("SELECT * FROM tbl_product AS p INNER JOIN tbl_media AS m ON m.p_id=p.p_id 
+										INNER JOIN tbl_category AS c ON c.cat_id=p.cat_id INNER JOIN tbl_brand AS b ON b.brn_id=p.brn_id WHERE p.p_id={$pro_id} GROUP BY m.p_id ASC");
+				// $this->db->where('p_id',$pro_id);
+				// $query=$this->db->get("tbl_product");
 				return $query->row();
 			}
+			// if($pro_id!==""){
+			// 	$this->db->where('p_id',$pro_id);
+			// 	$query=$this->db->get("tbl_product");
+			// 	return $query->row();
+			// }
 			
 		}
 		public function slideshow()

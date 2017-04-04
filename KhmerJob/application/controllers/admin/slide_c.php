@@ -13,8 +13,8 @@ class Slide_c extends CI_Controller
 	{		
 		$this->load->view('template/header');
 		$this->load->view('template/left');		
-		$data['pageHeader'] = $this->pageHeader;		
-		$data["action_url"]=array(0=>"{$this->page_redirect}/add",1=>"{$this->page_redirect}/edit",2=>"{$this->page_redirect}/delete"/*,"{$this->page_redirect}/change_password"*/);
+		$data['pageHeader'] = $this->pageHeader;					
+		$data["action_url"]=array("{$this->page_redirect}/add","{$this->page_redirect}/edit","{$this->page_redirect}/delete"/*,"{$this->page_redirect}/change_password"*/);
 		$data["tbl_hdr"]=array("Slide name","Description","URL","Image","Status","User create","Date create","User update","Date update",);		
 		$row=$this->slide_m->index();		
 		$i=0;
@@ -41,7 +41,7 @@ class Slide_c extends CI_Controller
 	}
 	public function validation()
 	{
-		$this->form_validation->set_rules('txtSlidename','Slide name','trim|required');		
+		$this->form_validation->set_rules('txtSlidename','Slide name','required');			
 		if($this->form_validation->run()==TRUE){return TRUE;}
 		else{return FALSE;}
 	}	
@@ -137,7 +137,8 @@ class Slide_c extends CI_Controller
 									'name'=>'txtSlidename',
 									'id'=>'txtSlidename',									
 									'value'=>$row==""? set_value("txtSlidename") : $row1,					
-									'placeholder'=>'Enter Slide name here...',									
+									'placeholder'=>'Enter Slide name here...',
+									'required'	=>'required',
 									'class'=>'form-control',
 									'label'=>'Slide Name',
 									'onClick'=>'alertName()'
@@ -162,7 +163,8 @@ class Slide_c extends CI_Controller
 								),							
 							array(
 									'type'=>'dropdown',
-									'name'=>'ddlStatus',									
+									'name'=>'ddlStatus',
+									'value'=>$row==""? set_value("ddlStatus") : $row4,
 									'option'=>$option,
 									'selected'=>$row==""? NULL : $row6,
 									'class'=>'class="form-control"',
@@ -174,6 +176,34 @@ class Slide_c extends CI_Controller
 									'value'=>$row==""? set_value("txtDesc") : $row5,
 									'label'=>'Description'
 								)
+
+
+
+
+							/*
+							array(
+								array(
+										'type'=>'checkbox',
+										'name'=>'chkSex[]',
+										'value'=>'M',
+										'label'=>'Male',
+									'chkLabel'=>'Gender'
+										
+									),
+								array(
+										'type'=>'checkbox',
+										'name'=>'chkSex[]',
+										'value'=>'F',
+										'label'=>'Female',
+										'chkLabel'=>'Gender'
+										
+									)
+								),
+							array(
+							'type'=>'textarea',
+							'name'=>'txtDesc',
+							'label'=>'Description'
+							)*/
 					);
 			return $ctrl;
 		}

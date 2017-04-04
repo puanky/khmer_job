@@ -18,7 +18,7 @@
 						<label>Priority:</label>
 					</div>
 					<div class="col-md-6">
-						<select class="form-control">
+						<select class="form-control input-sm">
 							<option>Premium</option>
 							<option>Standard</option>
 						</select>
@@ -29,7 +29,7 @@
 						<label>Priority Duration:</label>
 					</div>
 					<div class="col-md-6">
-						<select class="form-control">
+						<select class="form-control input-sm">
 							<option>180 days</option>
 							<option>365 days</option>
 						</select>
@@ -41,7 +41,7 @@
 						<label>Location:</label>
 					</div>
 					<div class="col-md-6">
-						<select class="form-control">
+						<select class="form-control input-sm">
 							<option>PP</option>
 						</select>
 					</div>
@@ -70,9 +70,8 @@
 									<label>Name:</label>
 								</div>
 								<div class="col-md-6">
-									<input type="text" class="form-control">
+									<?php echo form_input('name', set_value('name'),'class="form-control input-sm" placeholder="name" autocomplete="off" ')?>
 								</div>
-
 						 	</div>
 						</div>
 
@@ -82,9 +81,8 @@
 									<label>Address:</label>
 								</div>
 								<div class="col-md-6">
-									<input type="text" class="form-control">
+									<?php echo form_input('address', set_value('address'),'class="form-control input-sm" placeholder="Address..." autocomplete="off" ')?>
 								</div>
-
 						 	</div>
 						</div>
 						<div class="row" style="margin-top: 13px;">
@@ -93,9 +91,8 @@
 									<label>Tel:</label>
 								</div>
 								<div class="col-md-6">
-									<input type="text" class="form-control">
+									<?php echo form_input('tel', set_value('tel'),'class="form-control input-sm" placeholder="tel" autocomplete="off" ')?>
 								</div>
-
 						 	</div>
 						</div>
 						<div class="row" style="margin-top: 13px;">
@@ -104,9 +101,8 @@
 									<label>email:</label>
 								</div>
 								<div class="col-md-6">
-									<input type="text" class="form-control">
+									<?php echo form_input('email', set_value('email'),'class="form-control input-sm" placeholder="email..." autocomplete="off" ')?>
 								</div>
-
 						 	</div>
 						</div>
 						<div class="row" style="margin-top: 13px;">
@@ -115,9 +111,8 @@
 									<label>Line:</label>
 								</div>
 								<div class="col-md-6">
-									<input type="text" class="form-control">
+									<?php echo form_input('line', set_value('line'),'class="form-control input-sm" placeholder="line" autocomplete="off" ')?>
 								</div>
-
 						 	</div>
 						</div>
 						<div class="row" style="margin-top: 13px;">
@@ -126,9 +121,8 @@
 									<label>WahtsApp:</label>
 								</div>
 								<div class="col-md-6">
-									<input type="text" class="form-control">
+									<?php echo form_input('whatsapp', set_value('whatsapp'),'class="form-control input-sm" placeholder="WhatsApp..." autocomplete="off" ')?>
 								</div>
-
 						 	</div>
 						</div>
 						<div class="row" style="margin-top: 13px;">
@@ -137,7 +131,7 @@
 									<label>Website:</label>
 								</div>
 								<div class="col-md-6">
-									<input type="text" class="form-control">
+									<?php echo form_input('website', set_value('website'),'class="form-control input-sm" placeholder="Website..." autocomplete="off" ')?>
 								</div>
 						 	</div>
 						</div>
@@ -146,24 +140,26 @@
 				<div class="col-md-12">
 					<div class="row">
 						<b>Abount Me</b>
-						<textarea name="txt_abount_me"></textarea>
+						<?php echo form_textarea('website', set_value('website'),'class="" placeholder="Website..." autocomplete="off" ')?>
+						
 					</div><hr />
 				</div><!-- this Abount Me-->
 				<div class="col-md-12">
 					<div class="row">
 						<b>SKILL/SERVICE</b>
-						<textarea name="txt_abount_me"></textarea>
+						<?php echo form_textarea('website', set_value('website'),'class="" placeholder="Website..." autocomplete="off" ')?>
 					</div>
 				</div><!-- this Abount Me-->
 				<div class="row">
 					<div class="col-md-12">
 						<div class="col-md-10">
-							<button class="btn btn-primary">Preview</button>
-							<button class="btn btn-primary">Delete</button>
-							<button class="btn btn-primary">Save</button>
+							<?php echo form_submit('website', 'Preview','class="btn btn-primary btn-sm" placeholder="Website..." autocomplete="off" ')?>
+							
+							<button class="btn btn-primary btn-sm">Delete</button>
+							<button class="btn btn-primary btn-sm">Save</button>
 						</div>
 						<div class="col-md-2">
-							<button class="btn btn-primary">Submit</button>
+							<button class="btn btn-primary btn-sm">Submit</button>
 						</div>
 					</div>
 				</div>

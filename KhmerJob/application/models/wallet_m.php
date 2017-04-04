@@ -1,11 +1,10 @@
 <?php
 class Wallet_m extends CI_Model
 {			
-	var $userCrea;		
+	private $userLog="admin";		
 	public function __construct()
 	{
-		parent::__construct();
-		$this->userCrea = isset($this->session->userLogin)?$this->session->userLogin:"N/A";				
+		parent::__construct();				
 	}
 	public function index($id="")
 	{
@@ -40,7 +39,7 @@ class Wallet_m extends CI_Model
 						"wal_code" => $this->input->post("txtWalCode"),												
 						"wal_status" => $this->input->post("ddlStatus"),
 						"wal_desc" => $this->input->post("txtDesc"),												
-						"user_crea" => $this->userCrea,
+						"user_crea" => $this->userLog,
 						"date_crea" => date('Y-m-d')
 						 );
 		$query=$this->db->insert("tbl_wallet",$data);		
@@ -64,7 +63,7 @@ class Wallet_m extends CI_Model
 						"wal_code" => $this->input->post("txtWalCode"),												
 						"wal_status" => $this->input->post("ddlStatus"),
 						"wal_desc" => $this->input->post("txtDesc"),												
-						"user_updt" => $this->userCrea,
+						"user_updt" => $this->userLog,
 						"date_updt" => date('Y-m-d')
 						 );
 				$this->db->where("wal_id",$id);

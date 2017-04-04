@@ -14,7 +14,7 @@ class Product_c extends CI_Controller
 		$this->load->view('template/header');
 		$this->load->view('template/left');		
 		$data['pageHeader'] = $this->pageHeader;					
-		$data["action_url"]=array(0=>"{$this->page_redirect}/add",1=>"{$this->page_redirect}/edit",2=>"{$this->page_redirect}/delete"/*,"{$this->page_redirect}/change_password"*/);
+		$data["action_url"]=array("{$this->page_redirect}/add","{$this->page_redirect}/edit","{$this->page_redirect}/delete"/*,"{$this->page_redirect}/change_password"*/);
 		$data["tbl_hdr"]=array("Product name","Store id","Price","Date release","User create","Date create","User upate","Date upate");		
 		$row=$this->product_m->index();		
 		$i=0;
@@ -27,7 +27,7 @@ class Product_c extends CI_Controller
 										$value->price."$",
 										date("d-m-Y",strtotime($value->date_release)),
 										$value->user_crea,
-										date("d-m-Y",strtotime($value->date_crea)),							
+										$value->date_crea,							
 										$value->user_updt,
 										$value->date_updt==NULL?NULL:date("d-m-Y",strtotime($value->date_updt)),
 										$value->p_id
@@ -49,13 +49,9 @@ class Product_c extends CI_Controller
 		$this->load->view('template/footer');	
 	}
 	public function validation()
-	{	
-		$this->form_validation->set_rules('ddlStoreId','Store name','required');
-		$this->form_validation->set_rules('ddlCategoryId','Category name','required');
-		$this->form_validation->set_rules('ddlBrandId','Brand name','required');			
-		$this->form_validation->set_rules('txtPName','Product name','trim|required');
-		$this->form_validation->set_rules('txtStockQty','Quantity stock','trim|numeric');
-		$this->form_validation->set_rules('txtPrice','Price','trim|required|numeric');
+	{		
+		$this->form_validation->set_rules('txtPName','Product name','required');
+		$this->form_validation->set_rules('txtPrice','Price','required');
 		$this->form_validation->set_rules('txtDateRelease','Date release','required');												
 		if($this->form_validation->run()==TRUE){return TRUE;}
 		else{return FALSE;}
@@ -66,7 +62,7 @@ class Product_c extends CI_Controller
 			$store=$this->product_m->select_tables("tbl_store");			
 			if($store==TRUE)
 			{
-				$option1[NULL]	=	"Choose One";
+				$option1[0]	=	"Choose One";
 				foreach($store as $value):						
 				$option1[$value->str_id]=$value->str_name;								
 			endforeach;
@@ -75,7 +71,7 @@ class Product_c extends CI_Controller
 			$category=$this->product_m->select_tables("tbl_category");		
 			if($category==TRUE)
 			{
-				$option2[NULL]	= "Choose One";
+				$option2[0]	= "Choose One";
 				foreach($category as $value):						
 				$option2[$value->cat_id]=$value->cat_name;								
 			endforeach;
@@ -84,7 +80,7 @@ class Product_c extends CI_Controller
 			$brand=$this->product_m->select_tables("tbl_brand");			
 			if($brand==TRUE)
 			{
-				$option3[NULL]	= "Choose One";
+				$option3[0]	= "Choose One";
 				foreach($brand as $value):						
 				$option3[$value->brn_id]=$value->brn_name;								
 			endforeach;
@@ -212,7 +208,8 @@ class Product_c extends CI_Controller
 			$ctrl = array(
 							array(
 									'type'=>'dropdown',
-									'name'=>'ddlStoreId',									
+									'name'=>'ddlStoreId',
+									'value'=>$row==""? set_value("ddlStoreId") : $row1,									
 									'option'=>$option1,
 									'selected'=>$row==""?NULL:$row1,
 									'class'=>'class="form-control"',
@@ -220,7 +217,8 @@ class Product_c extends CI_Controller
 								),
 							array(
 									'type'=>'dropdown',
-									'name'=>'ddlCategoryId',									
+									'name'=>'ddlCategoryId',
+									'value'=>$row==""? set_value("ddlCategoryId") : $row2,
 									'option'=>$option2,
 									'selected'=>$row==""?NULL:$row2,
 									'class'=>'class="form-control"',
@@ -228,7 +226,8 @@ class Product_c extends CI_Controller
 								),
 							array(
 									'type'=>'dropdown',
-									'name'=>'ddlBrandId',									
+									'name'=>'ddlBrandId',
+									'value'=>$row==""? set_value("ddlBrandId") : $row3,
 									'option'=>$option3,
 									'selected'=>$row==""?NULL:$row3,
 									'class'=>'class="form-control"',
@@ -239,7 +238,8 @@ class Product_c extends CI_Controller
 									'name'=>'txtPName',
 									'id'=>'txtPName',									
 									'value'=>$row==""? set_value("txtPName") : $row4,					
-									'placeholder'=>'Enter Product name here...',																		
+									'placeholder'=>'Enter Product name here...',
+									'required'=>'required',									
 									'class'=>'form-control',
 									'label'=>'Product name',									
 								),
@@ -257,7 +257,8 @@ class Product_c extends CI_Controller
 									'name'=>'txtPrice',
 									'id'=>'txtPrice',									
 									'value'=>$row==""? set_value("txtPrice") : $row5,					
-									'placeholder'=>'Enter Price here...',																		
+									'placeholder'=>'Enter Price here...',
+									'required'=>'required',									
 									'class'=>'form-control',
 									'label'=>'Price',									
 								),
@@ -290,10 +291,10 @@ class Product_c extends CI_Controller
 								'label'=>'Model',									
 							),
 							array(
-								'type'=>'text',
+								'type'=>'date',
 								'name'=>'txtDateRelease',
 								'id'=>'txtDateRelease',
-								'value'=>$row==""? set_value("txtDateRelease") : $row10,
+								'value'=>$row==""? set_value("txtDateRelease") : date("m/d/Y",strtotime($row10)),
 								'placeholder'=>'Enter Date release here...',																																																			
 								'class'=>'form-control datetimepicker',
 								'label'=>'Date release',									

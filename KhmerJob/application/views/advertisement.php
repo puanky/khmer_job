@@ -22,61 +22,29 @@
     <div class="row">
       <div class="col-md-12">
         <table class="table table-bordered table-hover table-striped dataTable no-footer">
-          <thead>
-              <tr>
-                <th></th>
-                <th colspan="3" style="text-align: center;">Top Advertisement</th>
-                
-                <th colspan="3" style="text-align: center;">Side Advertisement</th>
-                
-              </tr>
-          </thead>
           <tbody>
               <tr>
-                <td>Duration </td>
-                <td>1 month </td>
-                <td>3 month </td>
-                <td>6 month </td>
-                 <td>1 month </td>
-                <td>3 month </td>
-                <td>6 month </td>
+                <td>Advertise Type</td>
+                <td>Duration</td>
+                <td>Size</td>
+                <td>Price/Ads</td>
+                 <td>Discount</td>
+                <td>Free Per Month</td>
               </tr>
-               <tr>
-                <td>size</td>
-                <td>728x90</td>
-                <td>728x90</td>
-                <td>728x90</td>
-                 <td>300x250</td>
-                <td>300x250</td>
-                <td>300x250</td>
-              </tr>
-               <tr>
-                <td>Price per ad </td>
-                <td>450$  </td>
-                <td>1300$</td>
-                <td>2500$  </td>
-                 <td>100$</td>
-                <td>2500$  </td>
-                <td>450$</td>
-              </tr>
-               <tr>
-                <td>Side Ads from 2<br />  up discount %</td>
-                <td>-- </td>
-                <td>-- </td>
-                <td>-- </td>
-                 <td>5%</td>
-                <td>7% </td>
-                <td>10% </td>
-              </tr>
-               <tr>
-                <td>Free per Month </td>
-                <td>Bundle package </td>
-                <td>Bundle package </td>
-                <td>Bundle package </td>
-                 <td>CV paid  search 8h </td>
-                <td>CV paid  search 8h </td>
-                <td>CV paid  search 8h </td>
-              </tr>
+              <?php
+                foreach ($ads as $value) {
+              ?> 
+              <tr>
+                <td><?php echo $value->rate_det_type; ?></td>
+                <td><?php echo $value->duration;?> Month<?php if($value->duration >1){ echo "s";} ?></td>
+                <td><?php echo $value->ads_size;?></td>
+                <td><?php echo $value->price;?> $</td>
+                <td><?php echo $value->ads_discount;?> %</td>
+                <td><?php echo $value->key_code?></td>
+              </tr> 
+              <?php 
+                }
+              ?>
           </tbody>
         </table>
         <div class="col-md-12">

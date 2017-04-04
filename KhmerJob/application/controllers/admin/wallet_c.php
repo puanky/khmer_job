@@ -14,7 +14,7 @@ class Wallet_c extends CI_Controller
 		$this->load->view('template/header');
 		$this->load->view('template/left');		
 		$data['pageHeader'] = $this->pageHeader;					
-		$data["action_url"]=array(0=>"{$this->page_redirect}/add",1=>"{$this->page_redirect}/edit",2=>"{$this->page_redirect}/delete"/*,"{$this->page_redirect}/change_password"*/);
+		$data["action_url"]=array("{$this->page_redirect}/add","{$this->page_redirect}/edit","{$this->page_redirect}/delete"/*,"{$this->page_redirect}/change_password"*/);
 		$data["tbl_hdr"]=array("Member name","Account code","Wallet code","Description","Status","User creat","Date create","User update","Date update");		
 		$row=$this->wallet_m->index();		
 		$i=0;
@@ -40,9 +40,8 @@ class Wallet_c extends CI_Controller
 		$this->load->view('template/footer');
 	}
 	public function validation()
-	{	
-		$this->form_validation->set_rules('ddlAccCode','Member name','required');										
-		$this->form_validation->set_rules('txtWalCode','Wallet code','trim|required');			
+	{		
+		$this->form_validation->set_rules('txtWalCode','Wallet code','required');										
 		if($this->form_validation->run()==TRUE){return TRUE;}
 		else{return FALSE;}
 	}	
@@ -53,7 +52,6 @@ class Wallet_c extends CI_Controller
 		$row=$this->wallet_m->select_account();				
 		if($row==TRUE)
 		{
-			$option1[NULL]	=	"Choose One";
 			foreach($row as $value):						
 			$option1[$value->acc_id]=$value->mem_name;				
 			endforeach;
@@ -79,8 +77,7 @@ class Wallet_c extends CI_Controller
 					redirect("{$this->page_redirect}/");     	
                 }
                 else $this->add("This Account have already !");														              	                	                                																			
-			}
-			else{$this->add();}			
+			}			
 		}
 	}
 	public function edit($id="",$error="")
@@ -95,7 +92,6 @@ class Wallet_c extends CI_Controller
 				$row1=$this->wallet_m->select_account();				
 				if($row1==TRUE)
 				{
-					$option1[NULL]	=	"Choose One";
 					foreach($row1 as $value):						
 					$option1[$value->acc_id]=$value->mem_name;				
 					endforeach;
@@ -152,7 +148,8 @@ class Wallet_c extends CI_Controller
 			$ctrl = array(														
 							array(
 									'type'=>'dropdown',
-									'name'=>'ddlAccCode',									
+									'name'=>'ddlAccCode',
+									'value'=>$row==""? set_value("ddlAccCode") : $row4,
 									'option'=>$option1,
 									'selected'=>$row==""?NULL:$row4,
 									'class'=>'class="form-control"',
@@ -163,13 +160,15 @@ class Wallet_c extends CI_Controller
 									'name'=>'txtWalCode',
 									'id'=>'txtWalCode',
 									'value'=>$row==""? set_value("txtWalCode") : $row1,
-									'placeholder'=>'Enter Wallet code here...',									
+									'placeholder'=>'Enter Wallet code here...',
+									'required'	=>'required',
 									'class'=>'form-control',
 									'label'=>'Wallet code'
 								),
 							array(
 									'type'=>'dropdown',
-									'name'=>'ddlStatus',									
+									'name'=>'ddlStatus',
+									'value'=>$row==""? set_value("ddlStatus") : $row2,
 									'option'=>$option,
 									'selected'=>$row==""?NULL:$row2,
 									'class'=>'class="form-control"',

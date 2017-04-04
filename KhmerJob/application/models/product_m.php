@@ -1,6 +1,7 @@
 <?php
 class Product_m extends CI_Model
-{				
+{			
+	private $userLog="admin";
 	var $userCrea;
 	var $str;	
 	public function __construct()
@@ -57,7 +58,7 @@ class Product_m extends CI_Model
 						"dimension" => $this->input->post("txtDimensoin"),
 						"short_desc" => $this->input->post("txtShortDesc"),
 						"p_desc" => $this->input->post("txtPdesc"),						
-						"user_crea" => $this->userCrea,
+						"user_crea" => $this->userLog,
 						"date_crea" => date('Y-m-d')
 						 );
 		$query=$this->db->insert("tbl_product",$data);
@@ -68,7 +69,7 @@ class Product_m extends CI_Model
 						'p_id' =>$id,
 						'path'=>!empty($this->input->post('txtImgName'))?$this->input->post('txtImgName'):"",
 						'media_type'=>'txtMediaType',
-						"user_crea" => $this->userCrea,
+						"user_crea" => $this->userLog,
 						"date_crea" => date('Y-m-d')
 						);
 		$this->db->insert("tbl_media",$data1);
@@ -103,8 +104,8 @@ class Product_m extends CI_Model
 						"dimension" => $this->input->post("txtDimensoin"),
 						"short_desc" => $this->input->post("txtShortDesc"),
 						"p_desc" => $this->input->post("txtPdesc"),						
-						"user_updt" => $this->userCrea,
-						"date_updt" => date('Y-m-d')
+						"user_crea" => $this->userLog,
+						"date_crea" => date('Y-m-d')
 						 );				
 				$this->db->where("p_id",$id);
 				$query=$this->db->update("tbl_product",$data);
@@ -113,7 +114,7 @@ class Product_m extends CI_Model
 				unlink("assets/uploads/".$row->path);
 				$data1 = array(						
 						'path'=>!empty($this->input->post('txtImgName'))?$this->input->post('txtImgName'):"",						
-						"user_updt" => $this->userCrea,
+						"user_updt" => $this->userLog,
 						"date_updt" => date('Y-m-d')
 						);
 				$this->db->where("p_id",$id);
@@ -135,8 +136,8 @@ class Product_m extends CI_Model
 						"dimension" => $this->input->post("txtDimensoin"),
 						"short_desc" => $this->input->post("txtShortDesc"),
 						"p_desc" => $this->input->post("txtPdesc"),						
-						"user_updt" => $this->userCrea,
-						"date_updt" => date('Y-m-d')
+						"user_crea" => $this->userLog,
+						"date_crea" => date('Y-m-d')
 						 );
 				$this->db->where("p_id",$id);
 				$query=$this->db->update("tbl_product",$data);

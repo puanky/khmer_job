@@ -13,9 +13,9 @@ class Member_c extends CI_Controller
 	{		
 		$this->load->view('template/header');
 		$this->load->view('template/left');		
-		$data['pageHeader'] = $this->pageHeader;
-		$data["action_url"]=array(0=>"{$this->page_redirect}/add",1=>"{$this->page_redirect}/edit",2=>"{$this->page_redirect}/delete"/*,"{$this->page_redirect}/change_password"*/);							
-		$data["tbl_hdr"]=array("Member Code","Name","Address","Phone","Email","Register Date","Status","Description","Valid code");		
+		$data['pageHeader'] = $this->pageHeader;					
+		$data["action_url"]=array("{$this->page_redirect}/add","{$this->page_redirect}/edit","{$this->page_redirect}/delete"/*,"{$this->page_redirect}/change_password"*/);
+		$data["tbl_hdr"]=array("Member Code","Name","Address","Phone","Email","Date","Status","Description","Valid code");		
 		$row=$this->member_m->index();		
 		$i=0;
 		if($row==TRUE)
@@ -41,10 +41,9 @@ class Member_c extends CI_Controller
 	}
 	public function validation()
 	{		
-		$this->form_validation->set_rules('txtMemberName','Member name','trim|required');		
-		$this->form_validation->set_rules('txtMemberPhone','Member phone','trim|required|regex_match[/^[0-9\-\+]{9,15}+$/]');
-		$this->form_validation->set_rules('txtMemberEmail','Member Email','trim|required|valid_email');
-		$this->form_validation->set_rules('txtRegisterDate','Register Date','required');								
+		$this->form_validation->set_rules('txtMemberName','Member name','required');		
+		$this->form_validation->set_rules('txtMemberPhone','Member phone','required');
+		$this->form_validation->set_rules('txtMemberEmail','Member Email','required');								
 		if($this->form_validation->run()==TRUE){return TRUE;}
 		else{return FALSE;}
 	}	
@@ -149,14 +148,15 @@ class Member_c extends CI_Controller
 									'value'=>$row==""? set_value("txtMemberCode") : $row1,					
 									'placeholder'=>'Enter Member code here...',									
 									'class'=>'form-control',
-									'label'=>'Member code'																								
+									'label'=>'Member code',									
 								),
 							array(
 									'type'=>'text',
 									'name'=>'txtMemberName',
 									'id'=>'txtMemberName',
 									'value'=>$row==""? set_value("txtMemberName") : $row2,
-									'placeholder'=>'Enter Member name here...',										
+									'placeholder'=>'Enter Member name here...',
+									'required'=>'required',	
 									'class'=>'form-control',
 									'label'=>'Member name'
 								),							
@@ -165,24 +165,26 @@ class Member_c extends CI_Controller
 								'name'=>'txtMemberPhone',
 								'id'=>'txtMemberPhone',
 								'value'=>$row==""? set_value("txtMemberPhone") : $row3,
-								'placeholder'=>'Enter Member phone here...',																																																										
+								'placeholder'=>'Enter Member phone here...',
+								'required'=>'required',																																																			
 								'class'=>'form-control',
 								'label'=>'Member phone',									
 							),							
 							array(
-								'type'=>'text',
+								'type'=>'email',
 								'name'=>'txtMemberEmail',
 								'id'=>'txtMemberEmail',
 								'value'=>$row==""? set_value("txtMemberEmail") : $row4,
-								'placeholder'=>'Enter Member email here...',																																																											
+								'placeholder'=>'Enter Member email here...',
+								'required'=>'required',																																																			
 								'class'=>'form-control',
 								'label'=>'Member email',									
 							),
 							array(
-								'type'=>'text',
+								'type'=>'date',
 								'name'=>'txtRegisterDate',
 								'id'=>'txtRegisterDate',
-								'value'=>$row==""? set_value("txtRegisterDate") : $row5,
+								'value'=>$row==""? set_value("txtRegisterDate") : date("m/d/Y",strtotime($row5)),
 								'placeholder'=>'Enter Register date here...',																																																			
 								'class'=>'form-control datetimepicker',
 								'label'=>'Register date',									
@@ -198,7 +200,8 @@ class Member_c extends CI_Controller
 							),							
 							array(
 									'type'=>'dropdown',
-									'name'=>'ddlStatus',									
+									'name'=>'ddlStatus',
+									'value'=>$row==""? set_value("ddlStatus") : $row7,
 									'option'=>$option,
 									'selected'=>$row==""? NULL : $row10,
 									'class'=>'class="form-control"',

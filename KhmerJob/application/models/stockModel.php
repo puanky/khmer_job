@@ -9,7 +9,7 @@ class StockModel extends CI_Model
 	function __construct()
 	{
 		parent::__construct();
-		$this->str_id = isset($this->session->str_id)?$this->session->str_id:'1';
+		$this->str_id = isset($this->session->str_id)?$this->session->str_id:'0';
 		$this->userCrea = isset($this->session->userLogin)?$this->session->userLogin:'Admin';
 	}
 

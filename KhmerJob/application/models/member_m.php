@@ -1,6 +1,7 @@
 <?php
 class Member_m extends CI_Model
-{					
+{			
+	private $userLog="admin";	
 	public function __construct()
 	{
 		parent::__construct();				
@@ -31,7 +32,7 @@ class Member_m extends CI_Model
 						"mem_phone" =>$this->input->post("txtMemberPhone"),
 						"mem_email" =>$this->input->post("txtMemberEmail"),
 						"mem_status" => $this->input->post("ddlStatus"),
-						"reg_date" => date("Y-m-d",strtotime($this->input->post("txtRegisterDate"))),										
+						"reg_date" => date("Y-m-d",strtotime($this->input->post("txtRegisterDate"))),												
 						"mem_desc" => $this->input->post("txtDesc"),						
 						"valid_code" =>$this->input->post("txtValidCode"),	
 						 );

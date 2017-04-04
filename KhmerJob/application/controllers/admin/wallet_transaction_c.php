@@ -14,7 +14,7 @@ class Wallet_transaction_c extends CI_Controller
 		$this->load->view('template/header');
 		$this->load->view('template/left');		
 		$data['pageHeader'] = $this->pageHeader;					
-		$data["action_url"]=array(0=>"{$this->page_redirect}/add",1=>"{$this->page_redirect}/edit",2=>"{$this->page_redirect}/delete"/*,"{$this->page_redirect}/change_password"*/);
+		$data["action_url"]=array("{$this->page_redirect}/add","{$this->page_redirect}/edit","{$this->page_redirect}/is_trash"/*,"{$this->page_redirect}/change_password"*/);
 		$data["tbl_hdr"]=array("Member name","Wallet code","Transaction type","Status","Transaction amount","Transaction Date");		
 		$row=$this->wallet_transaction_m->index();		
 		$i=0;

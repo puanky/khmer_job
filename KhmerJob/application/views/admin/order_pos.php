@@ -48,7 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <span class="input-group-addon">
                       <span class="glyphicon glyphicon-calendar"></span>
                   </span>
-              </div>      
+              </div>       
 
             </div>
                 <button class="btn btn-default" style="margin-top:25px;" ng-click="filterOrder()">Go!</button>

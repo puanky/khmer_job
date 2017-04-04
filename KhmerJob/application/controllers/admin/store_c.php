@@ -14,7 +14,7 @@ class Store_c extends CI_Controller
 		$this->load->view('template/header');
 		$this->load->view('template/left');		
 		$data['pageHeader'] = $this->pageHeader;					
-		$data["action_url"]=array(0=>"{$this->page_redirect}/add",1=>"{$this->page_redirect}/edit",2=>"{$this->page_redirect}/delete"/*,"{$this->page_redirect}/change_password"*/);
+		$data["action_url"]=array("{$this->page_redirect}/add","{$this->page_redirect}/edit","{$this->page_redirect}/delete"/*,"{$this->page_redirect}/change_password"*/);
 		$data["tbl_hdr"]=array("Store code","Account code","Member name","Store name","Store type","Description","Image","User create","Date create","User update","Date update",);		
 		$row=$this->store_m->index();		
 		$i=0;
@@ -42,9 +42,8 @@ class Store_c extends CI_Controller
 		$this->load->view('template/footer');
 	}
 	public function validation()
-	{	
-		$this->form_validation->set_rules('txtStrName','Store name','trim|required');	
-		$this->form_validation->set_rules('ddlAccCode','Member name','required');										
+	{		
+		$this->form_validation->set_rules('txtStrName','Store name','required');										
 		if($this->form_validation->run()==TRUE){return TRUE;}
 		else{return FALSE;}
 	}	
@@ -53,8 +52,7 @@ class Store_c extends CI_Controller
 		$data['error']=$error;
 		$row=$this->store_m->select_account();				
 		if($row==TRUE)
-		{	
-			$option[NULL]	=	"Choose One";
+		{
 			foreach($row as $value):						
 			$option[$value->acc_id]=$value->mem_name;				
 			endforeach;
@@ -80,8 +78,7 @@ class Store_c extends CI_Controller
 					redirect("{$this->page_redirect}/");     	
                 }
                 else $this->add("This Account have already !");														              	                	                                																			
-			}
-			else{$this->add();}			
+			}			
 		}
 	}
 	public function edit($id="",$error="")
@@ -163,7 +160,8 @@ class Store_c extends CI_Controller
 								),							
 							array(
 									'type'=>'dropdown',
-									'name'=>'ddlAccCode',									
+									'name'=>'ddlAccCode',
+									'value'=>$row==""? set_value("ddlAccCode") : $row2,
 									'option'=>$option,
 									'selected'=>$row==""?NULL:$row7,
 									'class'=>'class="form-control"',
@@ -174,7 +172,8 @@ class Store_c extends CI_Controller
 									'name'=>'txtStrName',
 									'id'=>'txtStrName',
 									'value'=>$row==""? set_value("txtStrName") : $row3,
-									'placeholder'=>'Enter Store name here...',									
+									'placeholder'=>'Enter Store name here...',
+									'required'	=>'required',
 									'class'=>'form-control',
 									'label'=>'Store name'
 								),

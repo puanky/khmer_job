@@ -2,19 +2,23 @@
     background: rgb(241, 241, 241);
     font-family: Khmer OS Battambang;
   }
+  .premium{
+    background: linear-gradient(to bottom, #008000  0%, #108e10  100%) !important; margin-top: 0px; color: #fff; padding: 8px;
+  }
+
   #box1:hover #image{
     -webkit-transform:scale(1.8);
     transform:scale(1.8);
   }
   #image{
       border: none;
-		  -webkit-transform:scale(0.9);
-			transform:scale(0.9);
-		  -webkit-transition: all 0.9s ease;
-		  transition: all 0.9s ease;
+      -webkit-transform:scale(0.9);
+      transform:scale(0.9);
+      -webkit-transition: all 0.9s ease;
+      transition: all 0.9s ease;
   }
   .navbar-default .navbar-nav>li>a{
-    color: #fff;
+    color: #fff !important;
   }
 #marquee{
   height: 30px; padding-top: 5px; background: linear-gradient(#4b4949, #727272); color: #fff;
@@ -23,13 +27,13 @@
    padding: 13px; border-bottom:#e4e4e4 solid 1px;
 }
 .navbar-default{
-    background-image: linear-gradient(to bottom, #FF9800 0%, #FF9800 100%) !important;
+    background-image: linear-gradient(to bottom, #008000  0%, #108e10  100%) !important;
 }
 #product_titel{
   font-size: 24.5px; font-weight: bold; text-align: center;
 }
 .description{
-	  color: #4d4c4c;
+    color: #4d4c4c;
     font-weight: normal;
     font-size: 15px;
     line-height: 2;
@@ -69,28 +73,28 @@
     cursor: pointer;
 }
 #wrapper{
-	width: 1322px; padding: 0px; margin-top: 15px;
+  width: 1322px; padding: 0px; margin-top: 15px;
 }
 #products_home{
-	margin: 0 auto;  background: white;
+  margin: 0 auto;  background: white;
 }
 #view{
-	text-decoration: none; color: #5d5b5b; font-size: 18px;
+  text-decoration: none; color: #5d5b5b; font-size: 18px;
 }
 #cbp-vm{
-	margin-top: 10px;
+  margin-top: 10px;
 }
 #navbar-default{
-	border-radius:0px;height:41px;padding:12px;color:white;
+  border-radius:0px;height:41px;padding:12px;color:white;
 }
 #products{
-	//padding:0px; //background: white;
+  //padding:0px; //background: white;
 }
 
 .dropdown {
     position: relative;
     display: inline-block;
-	
+  
     
 }
 
@@ -130,7 +134,8 @@
   margin-bottom: 10px;
   border: solid 1px gainsboro;
 }
-.thumbnail{
+.boxes{
+  background: orange;
 border-radius: 0px;
 }
 li{

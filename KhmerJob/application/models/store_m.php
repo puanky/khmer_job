@@ -1,11 +1,10 @@
 <?php
 class Store_m extends CI_Model
 {			
-	var $userCrea;	
+	private $userLog="admin";		
 	public function __construct()
 	{
-		parent::__construct();
-		$this->userCrea = isset($this->session->userLogin)?$this->session->userLogin:"N/A";				
+		parent::__construct();				
 	}
 	public function index($id="")
 	{
@@ -45,7 +44,7 @@ class Store_m extends CI_Model
 						"str_type" => $this->input->post("txtStrType"),
 						"str_desc" => $this->input->post("txtDesc"),						
 						"str_img" =>!empty($this->input->post('txtImgName'))?$this->input->post('txtImgName'):"",					
-						"user_crea" => $this->userCrea,
+						"user_crea" => $this->userLog,
 						"date_crea" => date('Y-m-d')
 						 );
 		$query=$this->db->insert("tbl_store",$data);		
@@ -75,7 +74,7 @@ class Store_m extends CI_Model
 						"str_type" => $this->input->post("txtStrType"),
 						"str_img"=>!empty($this->input->post('txtImgName'))?$this->input->post('txtImgName'):"",
 						"str_desc" => $this->input->post("txtDesc"),																								
-						"user_updt" => $this->userCrea,
+						"user_updt" => $this->userLog,
 						"date_updt" => date('Y-m-d')
 						);				
 				}
@@ -87,7 +86,7 @@ class Store_m extends CI_Model
 						"str_name" => $this->input->post("txtStrName"),						
 						"str_type" => $this->input->post("txtStrType"),						
 						"str_desc" => $this->input->post("txtDesc"),																								
-						"user_updt" => $this->userCrea,
+						"user_updt" => $this->userLog,
 						"date_updt" => date('Y-m-d')
 						);		
 				}

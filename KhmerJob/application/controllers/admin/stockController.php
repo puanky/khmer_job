@@ -44,9 +44,9 @@ class StockController extends CI_Controller
 		}
 		
 
-		$data['action_url'] = array(0=>$this->page_redirect.'/add',
-									1=>$this->page_redirect.'/edit',
-									2=>$this->page_redirect.'/delete') ;
+		$data['action_url'] = array($this->page_redirect.'/add',
+									$this->page_redirect.'/edit',
+									$this->page_redirect.'/delete') ;
 
 		$this->load->view('template/header');
 		$this->load->view('template/left');

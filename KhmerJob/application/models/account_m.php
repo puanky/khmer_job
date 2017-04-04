@@ -33,7 +33,9 @@ class Account_m extends CI_Model
 		$data= array(	
 						"acc_code" => $this->input->post("txtAccCode"),
 						"acc_name" => $this->input->post("txtAccName"),
-						"acc_position" => $this->input->post("txtPosition"),
+
+						"acc_company" => $this->input->post("txtCompany"),
+
 						"acc_pass" => do_hash($this->input->post("txtAccPass")),
 						"acc_gender" => $this->input->post("ddlGender"),
 						"acc_email" => $this->input->post("txtEmail"),
@@ -60,7 +62,7 @@ class Account_m extends CI_Model
 				unlink("assets/uploads/".$row->acc_photo);	
 				$data= array(							
 						"acc_name" => $this->input->post("txtAccName"),
-						"acc_position" => $this->input->post("txtPosition"),						
+						"acc_position" => $this->input->post("txtCompany"),						
 						"acc_gender" => $this->input->post("ddlGender"),
 						"acc_email" => $this->input->post("txtEmail"),
 						"acc_phone" => $this->input->post("txtPhone"),
@@ -79,7 +81,7 @@ class Account_m extends CI_Model
 				$data= array(	
 						"acc_code" => $this->input->post("txtAccCode"),
 						"acc_name" => $this->input->post("txtAccName"),
-						"acc_position" => $this->input->post("txtPosition"),						
+						"acc_position" => $this->input->post("txtCompany"),						
 						"acc_gender" => $this->input->post("ddlGender"),
 						"acc_email" => $this->input->post("txtEmail"),
 						"acc_phone" => $this->input->post("txtPhone"),
