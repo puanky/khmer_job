@@ -323,11 +323,125 @@
 						<div class="col-md-6">
 							<button class="btn btn-default" name="btnInvoicePreview" id="btnInvoicePreview">Invoice Preview</button>				
 						</div>
-						<div>	
-							<div class="col-md-6">
-							<button class="btn btn-success pull-right" name="btnPayment" id="btnPayment">Payment</button>				
-						</div>																	
-					</div><!--==== end invoice preview and payment ====-->
+
+						<div class="row" style="margin-top: 13px;">
+						 	<div class="col-md-12">
+								<div class="col-md-3">
+									<label>Category:</label>
+								</div>
+								<div class="col-md-6">
+									<select class="form-control input-sm">
+										<option>Automotive</option>
+										<option>Engineering</option>
+										<option>IT (web developer)</option>
+									</select>
+								</div>
+						 	</div>
+						</div>
+						<div class="row" style="margin-top: 13px;">
+						 	<div class="col-md-12">
+								<div class="col-md-3">
+									<label>Location:</label>
+								</div>
+								<div class="col-md-6">
+									<select class="form-control input-sm">
+										<option>Phnom Penh</option>
+										<option>Preah Sihanouk</option>
+										<option>Kampong Cham</option>
+										<option>Siem Reap</option>
+										<option>Battambang</option>
+										<option>Kandal</option>
+									</select>
+								</div>
+						 	</div>
+						</div>
+					</div>
+				 </div><!-- this panel --><hr />
+				<div class="row">
+					<div class="col-md-12">
+						<div class="col-md-10">
+							<button class="btn btn-primary"><i class="fa fa-external-link-square"></i> Preview</button>
+							<button class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</button>
+							<button class="btn btn-primary"><i class="fa fa-floppy-o"></i> Save</button>
+						</div>
+						<div class="col-md-2">
+							<button class="btn btn-primary">Submit</button>
+						</div>
+					</div>
+				</div><hr />
+				<div class="row">
+					<table class="table table-bordered">
+	       				
+	       					<tr>
+	       						<td>billing</td>
+	       						
+	       						<td colspan="3">Information </td>
+	       						<td>Neet VAT<input style="margin-left: 25px;" type="radio"><br />No Neet VAT <input type="radio"></td>
+	       						
+	       					</tr>
+	       					<tr>
+	       						<td>No.</td>
+	       						<td>Job ID</td>
+	       						<td>Price/Job</td>
+	       						<td>Discount</td>
+	       						<td>Priority</td>
+	       						
+	       					</tr>
+	       					<tr>
+	       						<td>End Date:</td>
+	       						<td>Years of Experience:</td>
+	       						<td>End Date:</td>
+	       						<td>Years of Experience:</td>
+	       						<td>End Date:</td>
+	       						
+	       					</tr>
+	       					<tr>
+	       						<td>End Date:</td>
+	       						<td>Years of Experience:</td>
+	       						<td>End Date:</td>
+	       						<td>Years of Experience:</td>
+	       						<td>End Date:</td>
+	       						
+	       					</tr>
+	       					<tr>
+	       						<td>End Date:</td>
+	       						<td>Years of Experience:</td>
+	       						<td>End Date:</td>
+	       						<td>Years of Experience:</td>
+	       						<td>End Date:</td>
+	       						
+	       					</tr>
+	       					<tr>
+	       						<td colspan="4"style="text-align: right;">Sub Total:</td>
+	       						
+	       						<td>End Date:</td>
+	       						
+	       					</tr>
+	       					<tr>
+	       						<td colspan="4"style="text-align: right;">Discount:</td>
+	       						
+	       						<td>End Date:</td>
+	       						
+	       					</tr>
+	       					<tr>
+	       						<td colspan="4"style="text-align: right;">Total:</td>
+	       						
+	       						<td>End Date:</td>
+	       						
+	       					</tr>
+	       					<tr>
+	       						<td  colspan="4"style="text-align: right;">VAT:</td>
+	       						
+	       						<td>End Date:</td>
+	       						
+	       					</tr>
+	       					<tr>
+	       						<td colspan="4"style="text-align: right;">Grend Total:</td>	       						
+	       						<td>End Date:</td>
+	       						
+	       					</tr>
+	       			</table>
+
 				</div>
 					<div class=" page-header"></div>
 					<div class="row">

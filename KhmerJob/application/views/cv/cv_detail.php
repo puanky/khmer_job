@@ -2,8 +2,12 @@
               .td{
                   padding:8px;
                 }
+              .margin
+              {
+                margin-left:19px;
+              }
             </style>
-            <div class="col-md-7">
+            <div class="col-md-8">
                 <div class="row">
                     <a  href="<?php echo base_url("home/cv_create");?>" class="btn btn-success" style="margin-bottom:10px">Print</a>
                     <div class="panel panel-default">
@@ -13,166 +17,218 @@
                                   <div class="panel panel-default" style="height:150px;width:100px">Photo</div>
                               </div>
                               <div class="col-md-8">
-                                 <table>
-                                    <tr>
-                                       <td>Name:</td>
-                                       <td><?php echo  ?></td>
-                                     </tr>
-                                     <tr>
-                                       <td>Curent Address:</td>
-                                       <td>KP</td>
-                                     </tr>
-                                     <tr>
-                                       <td>Tle</td>
-                                     </tr>
-                                     <tr>
-                                       <td>Email</td>
-                                     </tr>
-                                     <tr>
-                                       <td>Fecabook</td>
-                                     </tr>
-                                     <tr>
-                                       <td>Wtiter</td>
-                                     </tr>
-                                     <tr>
-                                       <td>G+1</td>
-                                     </tr>   
-                                 </table>
+                                <div class="row">
+                                  <div class="col-md-6">Name:</div>
+                                  <div class="col-md-6">....</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6">Curent Address:</div>
+                                  <div class="col-md-2">....</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6">Tel:</div>
+                                  <div class="col-md-2">....</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6">Email</div>
+                                  <div class="col-md-2">....</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6">Fecabook</div>
+                                  <div class="col-md-2">....</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6">Wtiter</div>
+                                  <div class="col-md-2">....</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6">G+1</div>
+                                  <div class="col-md-2">....</div>
+                                </div>
                               </div>
                               <div class="col-md-2">
-                                 <div style="border:1px solid; padding:5px" class="pull-right">A002</div>
+                                 <div style="border:1px solid; padding:5px">A002</div>
                               </div>
                             </div>
                             <div class="row">
                               <div class="col-md-12">
-                                 <table>
-                                   <tr>
-                                     <td><b>PROFILE</b></td>
-                                   </tr>
-                                   <tr>
-                                     <td>Data Of Birth</td>
-                                   </tr>
-                                   <tr>
-                                     <td>Pleace Of Birth</td>
-                                   </tr>
-                                   <tr>
-                                     <td>Marital Status</td>
-                                   </tr>
-                                   <tr>
-                                     <td>Nationality</td>
-                                   </tr>
-                                   <tr>
-                                     <td>Sex</td>
-                                   </tr>
-                                   <tr>
-                                     <td>WORK EXPRERIENCE</td>
-                                   </tr>
-                                   <tr>
-                                     <td>Form year to year :</td>
-                                   </tr>
-                                   <tr>
-                                     <td>..........</td>
-                                   </tr>
-                                   <tr>
-                                     <td>..........</td>
-                                   </tr>
-                                   <tr>
-                                     <td>Form year to year :</td>
-                                   </tr>
-                                   <tr>
-                                     <td>..........</td>
-                                   </tr>
-                                   <tr>
-                                     <td>..........</td>
-                                   </tr>
-                                   <tr>
-                                     <td>Education</td>
-                                   </tr>
-                                   <tr>
-                                     <td>Form year to year :</td>
-                                   </tr>
-                                   <tr>
-                                     <td>..........</td>
-                                   </tr>
-                                   <tr>
-                                     <td>..........</td>
-                                   </tr>
-                                   <tr>
-                                     <td>LANGUAGE</td>
-                                   </tr>
-                                   <tr>
-                                     <td>..........</td>
-                                   </tr>
-                                   <tr>
-                                     <td>..........</td>
-                                   </tr>
-                                   <tr>
-                                     <td>COMPUTER</td>
-                                   </tr>
-                                   <tr>
-                                     <td>..........</td>
-                                   </tr>
-                                   <tr>
-                                     <td>..........</td>
-                                   </tr>
-                                   <tr>
-                                     <td>OTHER SKILLS</td>
-                                   </tr>
-                                   <tr>
-                                     <td>..........</td>
-                                   </tr>
-                                   <tr>
-                                     <td>..........</td>
-                                   </tr>
-                                   <tr>
-                                     <td>SHORT COURSE TRAINING</td>
-                                   </tr>
-                                   <tr>
-                                     <td>..........</td>
-                                   </tr>
-                                   <tr>
-                                     <td>..........</td>
-                                   </tr>
-                                   <tr>
-                                     <td>REFERENCE</td>
-                                   </tr>
-                                   <tr>
-                                     <td>..........</td>
-                                   </tr>
-                                   <tr>
-                                     <td>..........</td>
-                                   </tr>
-                                   <tr>
-                                     <td>HOBBY</td>
-                                   </tr>
-                                   <tr>
-                                     <td>..........</td>
-                                   </tr>
-                                   <tr>
-                                     <td>..........</td>
-                                   </tr>
-                                   <tr>
-                                     <td>ABOUT ME</td>
-                                   </tr>
-                                   <tr>
-                                     <td>..............................................................................................</td>
-                                   </tr>
-                                   <tr>
-                                     <td>..............................................................................................</td>
-                                   </tr>
-                                   <tr>
-                                     <td>ADDITIONAL INFORMATION</td>
-                                   </tr>
-                                   <tr>
-                                     <td>Expected Salary:</td>
-                                   </tr>
-                                   <tr>
-                                     <td>Position Matched:</td>
-                                   </tr>
-                                   <tr>
-                                     <td>Job Gategory:</td>
-                                   </tr>
-                                 </table>
+                                <div class="row">
+                                  <div class="col-md-6"></div>
+                                  <div class="col-md-6"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-12">
+                                <div class="row">
+                                  <div class="col-md-6" style="margin:10px"><b>PROFILE</b></div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6">Data Of Birth</div>
+                                  <div class="col-md-6">......</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6">Pleace Of Birth</div>
+                                  <div class="col-md-6">......</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6">Marital Status</div>
+                                  <div class="col-md-6">......</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6">Nationality</div>
+                                  <div class="col-md-6">......</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6">Sex</div>
+                                  <div class="col-md-6">......</div>
+                                </div>
+
+                                <div class="row" style="margin-top:10px">
+                                  <div class="col-md-6">WORK EXPRERIENCE</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 margin">......</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 margin">......</div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-md-6">WORK EXPRERIENCE</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 margin">......</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 margin">......</div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-md-6">WORK EXPRERIENCE</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 margin">......</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 margin">......</div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-md-6">Form year to year :</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 margin">......</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 margin">......</div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-md-6">Form year to year :</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 margin">......</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 margin">......</div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-md-6">Education</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6">Form year to year :</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 margin">......</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 margin">......</div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-md-6">LANGUAGE</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 margin">......</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 margin">......</div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-md-6">COMPUTER</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 margin">......</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 margin">......</div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-md-6">OTHER SKILLS</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 margin">......</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 margin">......</div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-md-6">SHORT COURSE TRAINING</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 margin">......</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 margin">......</div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-md-6">REFERENCE</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 margin">......</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 margin">......</div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-md-6">HOBBY</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 margin">......</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 margin">......</div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-md-6">ABOUT ME</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 margin">..............................</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 margin">..............................</div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-md-6">ADDITIONAL INFORMATION</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6">Expected Salary:</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6">Position Matched:</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6">Job Gategory:</div>
+                                </div>
                               </div>
                             </div>
                         </div>

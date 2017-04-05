@@ -92,6 +92,7 @@
               </div>
               <div class="row">
                  <div class="col-lg-2">
+                  <a href="<?php echo base_url("home/cv_detail"); ?>">
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <div class="col-lg-3" ng-repeat="x in categories">
@@ -101,6 +102,7 @@
                             </div>
                         </div>
                     </div>
+                  </a>
                 </div>
                 <div class="col-lg-2">
                     <div class="panel panel-default">

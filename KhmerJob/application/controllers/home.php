@@ -5,15 +5,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		private $thumbnail_url="";
 		function __construct(){
 			parent::__construct();
-
 			$this->load->model('front/account_m','acc');
 			$this->load->model('front/contact_us_m','ct');
 			$this->load->model('front/about_us_m','au');
 			$this->load->model('front/ads_setup_m',"ads");
 			$this->load->model('front/promotion_m',"pt");
 			$this->load->model('front/FAQ_m');
-			/*$this->load->model('fornt/post_cv','pcv');*/			
 
+			/*$this->load->model('fornt/post_cv','pcv');*/			
 		}
 		function session(){
 			if(isset($_POST["kh"])){
@@ -30,7 +29,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$this->load->view("template_frontend/herder_and_nav");
 			} 	
 		}
-		public function index(){
+		public function index()
+		{
 			$this->switch_language();
 			$this->load->view('template_frontend/cv_job_skill'); 
 			$this->load->view('template_frontend/search_filter'); 
@@ -38,7 +38,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->load->view('template_frontend/advertising'); 
 			$this->load->view('template_frontend/footer');
 		}
-		public function head_left(){
+		public function head_left()
+		{
 			$this->switch_language();      
 			$this->load->view('template_frontend/left'); 
 		}
@@ -47,14 +48,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->load->view('template_frontend/footer');
 		}
 
-		public function cv(){
+		public function cv()
+		{
 			$this->switch_language(); 
+
 			/*$this->load->view('template_frontend/search_filter'); */     
+
 			$this->load->view('cv/cv');
 			$this->load->view('template_frontend/advertising');
 			$this->load->view('template_frontend/footer');
 		}
-
 		public function cv_post(){
 			if(isset($this->session->acc_log)){
 				$this->head_left();
@@ -64,32 +67,45 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$this->load->view("acc_log");
 			}
 		}
-		public function job_thumbnail(){
-			$this->switch_language();
 
-			//$this->load->view('template_frontend/cv_job_skill');
-			/*$this->load->view('template_frontend/search_filter'); */
-			$data['thumbnail_url']=$this->thumbnail_url="job_c/post_job";
-			$this->load->view('job/job_search_v',$data);
-			//$this->load->view('template_frontend/advertising'); 
+
+		public function cv_detail()
+		{	
+			$this->head_left();
+			$this->load->view("cv/cv_detail");
 			$this->load->view('template_frontend/footer');
 		}
-		public function skill(){
+
+		public function job()
+		{
+			$this->switch_language();       
+			$this->load->view('template_frontend/cv_job_skill'); 
+			$this->load->view('job/job');
+			$this->load->view('template_frontend/footer');
+		}
+		public function skill()
+		{
 			$this->switch_language(); 
+
 			/*$this->load->view('layout_site/register_logout');*/
+
 			$this->load->view('template_frontend/search_filter');
 			$this->load->view('skill/skill');
 			$this->right_foot();
 		}
-		public function service(){
+		public function service()
+		{
 			$this->switch_language();      
 			$this->load->view('template_frontend/cv_job_skill'); 
 			$this->load->view('template_frontend/search_filter'); 
 			$this->load->view('service');
+
 			//$this->load->view('template_frontend/advertising'); 
+
 			$this->load->view('template_frontend/footer');      
 		}
-		public function promotion(){
+		public function promotion()
+		{
 			$data["promotion"]=$this->pt->index();
 
 			$this->switch_language();      
@@ -98,17 +114,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 			if($data["promotion"]==TRUE){ 	
 			$this->load->view('promotion',$data);
-			//$this->load->view('template_frontend/advertising'); 
+
 			}
 			$this->load->view('template_frontend/footer');
 		}
-		/*public function advertising(){
-			$data["ads"]=$this->ads->index();
-			if($data["ads"]==TRUE){
-				$this->load->view("template_frontend/advertising",$data);
-			}
-		}*/
-		public function advertisement(){
+		public function advertisement()
+		{
+
 			$data["ads"]=$this->ads->index();
 			$this->switch_language();  
 			$this->load->view('template_frontend/cv_job_skill'); 
@@ -219,7 +231,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					{
 						$this->pcv->add($data);
 
-					}else if(isset($_POST["btnPriview"])){
+					}else if(isset($_POST["btnPriview"]))
+					{
 						$this->switch_language();
 						$this->load->view('template_frontend/left'); 
 						$this->load->view("cv/priview",$data);
@@ -229,17 +242,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					{	
 						$this->load->view("cv/print_cv");
 					}
-			}else{
-				
 			}
 		}
-		function prints()
+		function prints_cv()
 		{
-			echo "string";
 			$this->load->view("cv/print_cv");
 		}
 		
-		public function about(){
+		public function about()
+		{
 			$data["about"]=$this->au->index();
 			$this->head_left();
 			if($data["about"]==TRUE){
@@ -247,7 +258,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			}
 			$this->right_foot();
 		}
-		public function contact_us(){
+		public function contact_us()
+		{
 			$data["contacts"] = $this->ct->index();
 			$this->head_left();	
 			if($data["contacts"]==TRUE){
@@ -256,7 +268,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->load->view('template_frontend/advertising');
 			$this->load->view('template_frontend/footer');
 		}		
-		public function FAQ(){
+		public function FAQ()
+		{
 			$data["FAQ"] = $this->FAQ_m->index();
 			$this->head_left();
 			if($data["FAQ"]==TRUE){
@@ -265,10 +278,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			}
 			$this->right_foot();
 		}
-	public function logout(){
-		session_destroy();
-		$this->index();
-	}
-		
-	}
+		public function logout()
+		{
+			session_destroy();
+			$this->index();
+		}
+	}//end class
 	
