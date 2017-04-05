@@ -1,9 +1,9 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-	
+defined('BASEPATH') OR exit('No direct script access allowed');	
 	class Home extends CI_Controller 
 	{
-		 function __construct(){
+		private $thumbnail_url="";
+		function __construct(){
 			parent::__construct();
 
 			$this->load->model('front/account_m','acc');
@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->load->model('front/ads_setup_m',"ads");
 			$this->load->model('front/promotion_m',"pt");
 			$this->load->model('front/FAQ_m');
-			/*$this->load->model('fornt/post_cv','pcv');*/
+			/*$this->load->model('fornt/post_cv','pcv');*/			
 
 		}
 		function session(){
@@ -64,13 +64,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$this->load->view("acc_log");
 			}
 		}
-		public function job(){
-			$this->switch_language();       
+		public function job_thumbnail(){
+			$this->switch_language();
 
-			$this->load->view('template_frontend/cv_job_skill'); 
-
+			//$this->load->view('template_frontend/cv_job_skill');
 			/*$this->load->view('template_frontend/search_filter'); */
-			$this->load->view('job/job');
+			$data['thumbnail_url']=$this->thumbnail_url="job_c/post_job";
+			$this->load->view('job/job_search_v',$data);
 			//$this->load->view('template_frontend/advertising'); 
 			$this->load->view('template_frontend/footer');
 		}

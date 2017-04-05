@@ -108,7 +108,14 @@
 		<img src="<?php echo base_url('assets/uploads/scroll-to-top.png');?>">
 	</a>
 </div><!-- back-to-top -->
-
+<script type="text/javascript">
+    $(function () {
+        $('.datetimepicker').datetimepicker({
+            format: 'YYYY-MM-DD'
+         });
+    });
+</script>
 <script src="<?php echo base_url('assets/bower_components/bootstrap/dist/js/jquery.js')?>"></script>
-<script src="<?php echo base_url('assets/bower_components/bootstrap/dist/js/bootstrap.min.js')?>"></script>
+<script src="<?php echo base_url('assets/dist/js/jquery.min.js')?>"></script>
+<script src="<?php echo base_url('assets/dist/js/bootstrap-datetimepicker.js')?>"></script>
 <script>tinymce.init({ selector:'textarea' });</script>

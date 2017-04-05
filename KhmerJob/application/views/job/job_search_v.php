@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="">
 		<div class="col-sm-6 col-md-2">
-			<a href="<?php echo base_url('home/postjob');?>" class="thumbnail" style="padding: 25px;">Post Job</a>
+			<a href="<?php if(isset($thumbnail_url)){echo base_url($thumbnail_url);}?>" class="thumbnail" style="padding: 25px;">Post Job</a>
 		</div>
 		<div class="col-md-9"></div>
 		<div class="col-md-1">
