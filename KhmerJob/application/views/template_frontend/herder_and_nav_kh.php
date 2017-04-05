@@ -107,14 +107,14 @@
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav" style="background-color:screen">
-                            <li class="<?php echo $home?>"><a href="<?php echo base_url('home');?>">Home</a></li>
-                            <li class="<?php echo $about?>" ><a href="<?php echo base_url('home/about');?>">About Us</a></li>
-                            <li class="<?php echo $service?>"><a href="<?php echo base_url('home/service');?>">Services</a></li>
-                            <li class="<?php echo $advertisement?>"><a href="<?php echo base_url('home/advertisement');?>">Advertisement</a></li>
-                            <li class="<?php echo $payment?>"><a href="">Paymet</a></li>
-                            <li class="<?php echo $promotion?>"><a href="<?php echo base_url('home/promotion');?>">Promotion</a></li>
-                            <li class="<?php echo $contact_us?>"><a href="<?php echo base_url('home/contact_us');?>">Contact Us</a></li>
-                            <li class="<?php echo $FAQ?>"><a href="<?php echo base_url('home/FAQ'); ?>">FAQ</a></li>
+                            <li class="<?php echo $home?>"><a href="<?php echo base_url('home');?>">ទំព័រដើម</a></li>
+                            <li class="<?php echo $about?>" ><a href="<?php echo base_url('home/about');?>">អំពីយើង</a></li>
+                            <li class="<?php echo $service?>"><a href="<?php echo base_url('home/service');?>">សេវាកម្ម</a></li>
+                            <li class="<?php echo $advertisement?>"><a href="<?php echo base_url('home/advertisement');?>">ផ្សពផ្សាយពានិជ្ជកម្ម</a></li>
+                            <li class="<?php echo $payment?>"><a href="">បង់ប្រាក់</a></li>
+                            <li class="<?php echo $promotion?>"><a href="<?php echo base_url('home/promotion');?>">កម្មវិធីពិសេស</a></li>
+                            <li class="<?php echo $contact_us?>"><a href="<?php echo base_url('home/contact_us');?>">ទំនាក់ទំនង</a></li>
+                            <li class="<?php echo $FAQ?>"><a href="<?php echo base_url('home/FAQ'); ?>"​>សំនួរ ចម្លើយ</a></li>
                         </ul>
                     </div>
                 </nav>

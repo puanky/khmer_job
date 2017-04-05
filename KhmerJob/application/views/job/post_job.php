@@ -377,13 +377,10 @@
 	       						
 	       					</tr>
 	       					<tr>
-	       						<td colspan="4"style="text-align: right;">Grend Total:</td>
-	       						
-	       						
+	       						<td colspan="4"style="text-align: right;">Grend Total:</td>	       						
 	       						<td>End Date:</td>
 	       						
 	       					</tr>
-	       					
 	       			</table>
 				</div>
 		    </div>

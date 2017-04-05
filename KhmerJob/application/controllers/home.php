@@ -5,15 +5,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	{
 		 function __construct(){
 			parent::__construct();
-
 			$this->load->model('front/account_m','acc');
 			$this->load->model('front/contact_us_m','ct');
 			$this->load->model('front/about_us_m','au');
 			$this->load->model('front/ads_setup_m',"ads");
 			$this->load->model('front/promotion_m',"pt");
 			$this->load->model('front/FAQ_m');
-			/*$this->load->model('fornt/post_cv','pcv');*/
-
 		}
 		function session(){
 			if(isset($_POST["kh"])){
@@ -25,36 +22,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		}
 		public function	switch_language(){
 			if($this->session->language=="kh"){
-				$this->load->view("layout_site/herder_and_nav_kh");
+				$this->load->view("template_frontend/herder_and_nav_kh");
 			}else{
-				$this->load->view("layout_site/herder_and_nav");
+				$this->load->view("template_frontend/herder_and_nav");
 			} 	
 		}
-		public function index(){
+		public function index()
+		{
 			$this->switch_language();
-			$this->load->view('layout_site/cv_job_skill'); 
-			$this->load->view('layout_site/search_filter'); 
+			$this->load->view('template_frontend/cv_job_skill'); 
+			$this->load->view('template_frontend/search_filter'); 
 			$this->load->view('content_home_page');
-			$this->load->view('layout_site/advertising'); 
-			$this->load->view('layout_site/footer');
+			$this->load->view('template_frontend/advertising'); 
+			$this->load->view('template_frontend/footer');
 		}
-		public function head_left(){
+		public function head_left()
+		{
 			$this->switch_language();      
-			$this->load->view('layout_site/left'); 
+			$this->load->view('template_frontend/left'); 
 		}
 		public function right_foot(){
-			$this->load->view('layout_site/right');
-			$this->load->view('layout_site/footer');
+			$this->load->view('template_frontend/right');
+			$this->load->view('template_frontend/footer');
 		}
 
-		public function cv(){
+		public function cv()
+		{
 			$this->switch_language(); 
-			/*$this->load->view('layout_site/search_filter'); */     
 			$this->load->view('cv/cv');
-			$this->load->view('layout_site/advertising');
-			$this->load->view('layout_site/footer');
+			$this->load->view('template_frontend/advertising');
+			$this->load->view('template_frontend/footer');
 		}
-
 		public function cv_post(){
 			if(isset($this->session->acc_log)){
 				$this->head_left();
@@ -64,59 +62,59 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$this->load->view("acc_log");
 			}
 		}
-		public function job(){
-			$this->switch_language();       
 
-			$this->load->view('layout_site/cv_job_skill'); 
-
-			/*$this->load->view('layout_site/search_filter'); */
-			$this->load->view('job/job');
-			//$this->load->view('layout_site/advertising'); 
-			$this->load->view('layout_site/footer');
+		public function cv_detail()
+		{	
+			$this->head_left();
+			$this->load->view("cv/cv_detail");
+			$this->load->view('template_frontend/footer');
 		}
-		public function skill(){
+
+		public function job()
+		{
+			$this->switch_language();       
+			$this->load->view('template_frontend/cv_job_skill'); 
+			$this->load->view('job/job');
+			$this->load->view('template_frontend/footer');
+		}
+		public function skill()
+		{
 			$this->switch_language(); 
-			/*$this->load->view('layout_site/register_logout');*/
-			$this->load->view('layout_site/search_filter');
+			$this->load->view('template_frontend/search_filter');
 			$this->load->view('skill/skill');
 			$this->right_foot();
 		}
-		public function service(){
+		public function service()
+		{
 			$this->switch_language();      
-			$this->load->view('layout_site/cv_job_skill'); 
-			$this->load->view('layout_site/search_filter'); 
+			$this->load->view('template_frontend/cv_job_skill'); 
+			$this->load->view('template_frontend/search_filter'); 
 			$this->load->view('service');
-			//$this->load->view('layout_site/advertising'); 
-			$this->load->view('layout_site/footer');      
+			$this->load->view('template_frontend/footer');      
 		}
-		public function promotion(){
+		public function promotion()
+		{
 			$data["promotion"]=$this->pt->index();
 
 			$this->switch_language();      
-			$this->load->view('layout_site/cv_job_skill'); 
-			$this->load->view('layout_site/search_filter'); 
+			$this->load->view('template_frontend/cv_job_skill'); 
+			$this->load->view('template_frontend/search_filter'); 
 
 			if($data["promotion"]==TRUE){ 	
 			$this->load->view('promotion',$data);
-			//$this->load->view('layout_site/advertising'); 
 			}
-			$this->load->view('layout_site/footer');
+			$this->load->view('template_frontend/footer');
 		}
-		/*public function advertising(){
-			$data["ads"]=$this->ads->index();
-			if($data["ads"]==TRUE){
-				$this->load->view("layout_site/advertising",$data);
-			}
-		}*/
-		public function advertisement(){
+		public function advertisement()
+		{
 			$data["ads"]=$this->ads->index();
 			$this->switch_language();  
-			$this->load->view('layout_site/cv_job_skill'); 
-			$this->load->view('layout_site/search_filter');
+			$this->load->view('template_frontend/cv_job_skill'); 
+			$this->load->view('template_frontend/search_filter');
 			if($data["ads"]==TRUE){
 			}
-			$this->load->view('layout_site/advertising');
-			$this->load->view('layout_site/footer');  
+			$this->load->view('template_frontend/advertising');
+			$this->load->view('template_frontend/footer');  
 		}
 
 		public function validation()
@@ -219,27 +217,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					{
 						$this->pcv->add($data);
 
-					}else if(isset($_POST["btnPriview"])){
+					}else if(isset($_POST["btnPriview"]))
+					{
 						$this->switch_language();
-						$this->load->view('layout_site/left'); 
+						$this->load->view('template_frontend/left'); 
 						$this->load->view("cv/priview",$data);
-						$this->load->view('layout_site/advertising');
-						$this->load->view('layout_site/footer');
+						$this->load->view('template_frontend/advertising');
+						$this->load->view('template_frontend/footer');
 					}else if(isset($_POST["btnPrint"]))
 					{	
 						$this->load->view("cv/print_cv");
 					}
-			}else{
-				
 			}
 		}
-		function prints()
+		function prints_cv()
 		{
-			echo "string";
 			$this->load->view("cv/print_cv");
 		}
 		
-		public function about(){
+		public function about()
+		{
 			$data["about"]=$this->au->index();
 			$this->head_left();
 			if($data["about"]==TRUE){
@@ -247,16 +244,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			}
 			$this->right_foot();
 		}
-		public function contact_us(){
+		public function contact_us()
+		{
 			$data["contacts"] = $this->ct->index();
 			$this->head_left();	
 			if($data["contacts"]==TRUE){
 			$this->load->view('contact_us',$data);
 			}
-			$this->load->view('layout_site/advertising');
-			$this->load->view('layout_site/footer');
+			$this->load->view('template_frontend/advertising');
+			$this->load->view('template_frontend/footer');
 		}		
-		public function FAQ(){
+		public function FAQ()
+		{
 			$data["FAQ"] = $this->FAQ_m->index();
 			$this->head_left();
 			if($data["FAQ"]==TRUE){
@@ -265,10 +264,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			}
 			$this->right_foot();
 		}
-	public function logout(){
-		session_destroy();
-		$this->index();
-	}
-		
-	}
+		public function logout()
+		{
+			session_destroy();
+			$this->index();
+		}
+	}//end class
 	
