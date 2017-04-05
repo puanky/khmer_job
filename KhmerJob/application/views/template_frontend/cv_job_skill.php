@@ -22,9 +22,10 @@
 
             <div class="col-md-4">
                 <div class="row">
-                        <a href="<?php echo base_url('home/job');?>" class="thumbnail color">
-                            <h1 class="text-center">Job</h1>
-                        </a>
+                    <a href="<?php echo base_url('home/job_thumbnail');?>" class="thumbnail">
+                        <h1 class="text-center">JOB</h1>
+                    </a>
+
                 </div>
                 
             </div><!-- this JOB -->

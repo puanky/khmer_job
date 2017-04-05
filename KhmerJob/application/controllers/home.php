@@ -1,9 +1,9 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-	
+defined('BASEPATH') OR exit('No direct script access allowed');	
 	class Home extends CI_Controller 
 	{
-		 function __construct(){
+		private $thumbnail_url="";
+		function __construct(){
 			parent::__construct();
 			$this->load->model('front/account_m','acc');
 			$this->load->model('front/contact_us_m','ct');
@@ -11,6 +11,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->load->model('front/ads_setup_m',"ads");
 			$this->load->model('front/promotion_m',"pt");
 			$this->load->model('front/FAQ_m');
+
+			/*$this->load->model('fornt/post_cv','pcv');*/			
 		}
 		function session(){
 			if(isset($_POST["kh"])){
@@ -49,6 +51,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		public function cv()
 		{
 			$this->switch_language(); 
+
+			/*$this->load->view('template_frontend/search_filter'); */     
+
 			$this->load->view('cv/cv');
 			$this->load->view('template_frontend/advertising');
 			$this->load->view('template_frontend/footer');
@@ -62,6 +67,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$this->load->view("acc_log");
 			}
 		}
+
 
 		public function cv_detail()
 		{	
@@ -80,6 +86,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		public function skill()
 		{
 			$this->switch_language(); 
+
+			/*$this->load->view('layout_site/register_logout');*/
+
 			$this->load->view('template_frontend/search_filter');
 			$this->load->view('skill/skill');
 			$this->right_foot();
@@ -90,6 +99,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->load->view('template_frontend/cv_job_skill'); 
 			$this->load->view('template_frontend/search_filter'); 
 			$this->load->view('service');
+
+			//$this->load->view('template_frontend/advertising'); 
+
 			$this->load->view('template_frontend/footer');      
 		}
 		public function promotion()
@@ -102,11 +114,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 			if($data["promotion"]==TRUE){ 	
 			$this->load->view('promotion',$data);
+
 			}
 			$this->load->view('template_frontend/footer');
 		}
 		public function advertisement()
 		{
+
 			$data["ads"]=$this->ads->index();
 			$this->switch_language();  
 			$this->load->view('template_frontend/cv_job_skill'); 

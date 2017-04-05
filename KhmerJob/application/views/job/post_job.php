@@ -1,270 +1,329 @@
-<div class="col-md-8">
-	<div class="row">
-		<div class="panel panel-default">
-	        <div class="panel-body">
-	        	<div class="row">
-	      			<div class="col-md-12">
-		        		<div class="col-md-2" style="border:#d6d1d1 1px solid">
-		        			<p>Job 001</p>
-		        		</div>
-		        		<div class="col-md-8"></div>
-		        		<div class="col-md-2" style="border:#d6d1d1 1px solid;">
-		        			<p>Job ID: 001</p>
+	
+	<div class="col-md-3"><!--=====side bar button ======-->
+		<div class="list-group">
+		  <a href="#" class="list-group-item active">Account Information</a>
+		  <a href="#" class="list-group-item">Post Job</a>
+		  <a href="#" class="list-group-item">Post CV</a>
+		  <a href="#" class="list-group-item">Post Skill</a>
+		  <a href="#" class="list-group-item">Advertisement</a>
+		  <a href="#" class="list-group-item">Purchase Bundle Package</a>
+		  <a href="#" class="list-group-item">Purchase CV Paid Search</a>
+		</div>
+	</div><!--=====end side bar button ======-->
+	<div class="col-md-9"><!--===== form post job ======-->
+		<div class="row">
+			<div class="panel panel-default">
+		        <div class="panel-body">
+		        	<div class="row">
+		      			<div class="col-md-6">
+		      				<div class="form-group">
+		      					<label class="control-label">Job ID</label>
+		      					<?php echo form_input(array("name"=>"txtJobID","id"=>"txtJobID","value"=>"JB-000001","class"=>"form-control","readonly"=>"readonly"));?>		      					
+		      				</div>			        					        						        						        	
 			        	</div>
-		        	</div>
-				</div>
-				<div class="row" style="margin-top: 10px;">
-					<div class="col-md-3">
-						<label>Priority:</label>
-					</div>
-					<div class="col-md-6">
-						<select class="form-control input-sm">
-							<option>Premium</option>
-							<option>Standard</option>
-						</select>
-					</div>
-				</div>
-				<div class="row" style="margin-top: 10px;">
-					<div class="col-md-3">
-						<label>Duration:</label>
-					</div>
-					<div class="col-md-6">
-						<select class="form-control input-sm">
-							<option>15 days</option>
-							<option>30 days</option>
-						</select>
+			        	<div class="col-md-6">
+		      				<div class="form-group">
+		      					<label class="control-label">Priority</label>
+		      					<select name="ddlPriority" id="ddlPriority" class="form-control">
+		      						<option value="Priority">Premium</option>
+		      						<option value="Priority">Standard</option>
+		      					</select>
+		      				</div>			        					        						        						        	
+			        	</div>
 					</div>
 
-				</div>
-				<div class="row" style="margin-top: 10px;">
-					<div class="col-md-3">
-						<label>Job Title:</label>
+					<div class="row">		      			
+			        	<div class="col-md-6">
+		      				<div class="form-group">
+		      					<label class="control-label">Duration</label>
+		      					<select name="ddlDuration" id="ddlDuration" class="form-control">
+		      						<option value="Priority">15</option>
+		      						<option value="Priority">20</option>
+		      					</select>
+		      				</div>			        					        						        						        	
+			        	</div>
+			        	<div class="col-md-6">
+		      				<div class="form-group">
+		      					<label class="control-label">Job Title</label>
+		      					<?php echo form_input(array("name"=>"txtJobTitle","id"=>"txtJobTitle","value"=>"","class"=>"form-control","placeholder"=>"Enter Job Title here..."));?>		      					
+		      				</div>			        					        						        						        	
+			        	</div>
 					</div>
-					<div class="col-md-6">
-						<?php echo form_input('job_title', set_value('job_title'),'class="form-control input-sm" placeholder="Job Title..." autocomplete="off" ')?>
+
+					<div class="row">		      			
+			        	<div class="col-md-12">
+		      				<div class="form-group">
+		      					<label class="control-label">Job Description</label>
+		      					<?php echo form_textarea(array("name"=>"txtJobDes","id"=>"txtJobDes","class"=>"form-control","placeholder"=>"Enter Job Description here..."))?>
+		      				</div>			        					        						        						        	
+			        	</div>			        	
 					</div>
 
-				 </div>
-				<div class="row" style="margin-top: 10px;">
-					<div class="col-md-12">
-						<label>Job Description:</label>
-						<?php echo form_textarea('job_descr', set_value('job_descr'))?>
+					<div class="row">		      			
+			        	<div class="col-md-12">
+		      				<div class="form-group">
+		      					<label class="control-label">Job Requirement</label>
+		      					<?php echo form_textarea(array("name"=>"txtJobRequirement","id"=>"txtJobRequirement","class"=>"form-control","placeholder"=>"Enter Job Requirement here..."))?>
+		      				</div>			        					        						        						        	
+			        	</div>			        	
 					</div>
-					<div class="col-md-12">
-						<label>Requirement:</label>
-						<?php echo form_textarea('requirement', set_value('requirement'))?>
-					</div>
-					<div class="col-md-12">
-						<label>Other Benafits</label>
-						<?php echo form_textarea('benafits', set_value('benafits'))?>
-					</div>
-				
-				 </div>
-				 <div class="panel panel-default" style="margin-top: 20px;">
-		        	<div class="panel-body">
-						<div class="row">
-						 	<div class="col-md-12">
-								<div class="col-md-3">
-									<label>Contact Name:</label>
-								</div>
-								<div class="col-md-6">
-									<?php echo form_input('contact_name', set_value('contact_name'),'class="form-control input-sm" placeholder="Contact Name..." autocomplete="off" ')?>
-								</div>
 
-						 	</div>
+					<div class="row"><!--==== other benefit ====-->		      			
+			        	<div class="col-md-12">
+		      				<div class="panel panel-default">
+		      					  <div class="panel-heading">Other Benefits</div>
+								  <div class="panel-body">
+								    <div class="row">
+								    	<div class="col-md-6">
+								    		<label class="control-label">Posting Date</label>
+						      				<div class="input-group datetimepicker">
+						      					<?php echo form_input(array("name"=>"txtPostingDate","id"=>"txtPostingDate","value"=>"","class"=>"form-control datetimepicker","placeholder"=>"Click on Posting date"));?>		      											      					                                         		                                          
+		                                        <span class="input-group-addon">
+		                                            <span class="glyphicon glyphicon-calendar"></span>
+		                                        </span>                                
+                                    		</div>			        					        						        						        	
+							        	</div>
+							        	<div class="col-md-6">
+								    		<label class="control-label">End Date</label>
+						      				<div class="input-group datetimepicker">
+						      					<?php echo form_input(array("name"=>"txtEndDate","id"=>"txtEndDate","value"=>"","class"=>"form-control datetimepicker","placeholder"=>"Click on End date"));?>		      											      					                                         		                                          
+		                                        <span class="input-group-addon">
+		                                            <span class="glyphicon glyphicon-calendar"></span>
+		                                        </span>                                
+                                    		</div>			        					        						        						        	
+							        	</div>
+								    </div>
+
+								    <div class="row">
+								    	<div class="col-md-6">
+								    		<div class="form-group">
+						      					<label class="control-label">Contract</label>
+						      					<select name="ddlContract" id="ddlContract" class="form-control">
+						      						<option value="Priority">15</option>
+						      						<option value="Priority">20</option>
+						      						<option value="Priority">15</option>
+						      						<option value="Priority">20</option>
+						      					</select>
+						      				</div>
+								    	</div>
+								    	<div class="col-md-6">
+								    		<div class="form-group">
+						      					<label class="control-label">Gender</label>
+						      					<select name="ddlGender" id="ddlGender" class="form-control">
+						      						<option value="m">Male</option>
+						      						<option value="f">Female</option>
+						      						<option value="o">Other</option>						      						
+						      					</select>
+						      				</div>
+								    	</div>								    	
+								    </div>
+
+								     <div class="row">
+								    	<div class="col-md-6">
+								    		<div class="form-group">
+						      					<label class="control-label">Age</label>
+						      					<select name="ddlAge" id="ddlAge" class="form-control">
+						      						<option value="Priority">15</option>
+						      						<option value="Priority">20</option>
+						      						<option value="Priority">15</option>
+						      						<option value="Priority">20</option>
+						      					</select>
+						      				</div>
+								    	</div>
+								    	<div class="col-md-6">
+								    		<div class="form-group">
+						      					<label class="control-label">Salary Range</label>
+						      					<select name="ddlSalaryRange" id="ddlSalaryRange" class="form-control">
+						      						<option value="Priority">15</option>
+						      						<option value="Priority">20</option>
+						      						<option value="Priority">15</option>
+						      						<option value="Priority">20</option>						      						
+						      					</select>
+						      				</div>
+								    	</div>								    	
+								    </div>
+
+								    <div class="row">
+								    	<div class="col-md-6">
+								    		<div class="form-group">
+						      					<label class="control-label">Yearso of Experience</label>
+						      					<select name="ddlYearExp" id="ddlYearExp" class="form-control">
+						      						<option value="Priority">15</option>
+						      						<option value="Priority">20</option>
+						      						<option value="Priority">15</option>
+						      						<option value="Priority">20</option>
+						      					</select>
+						      				</div>
+								    	</div>
+								    	<div class="col-md-6">
+								    		<div class="form-group">
+						      					<label class="control-label">Education</label>
+						      					<select name="ddlSalaryRange" id="ddlSalaryRange" class="form-control">
+						      						<option value="Priority">PhD</option>
+						      						<option value="Priority">Master</option>
+						      						<option value="Priority">Bachelor</option>
+						      						<option value="Priority">Associate</option>
+						      						<option value="Priority">Vocational</option>
+						      						<option value="Priority">Higth School</option>
+						      						<option value="Priority">Other</option>						      												      												      						
+						      					</select>
+						      				</div>
+								    	</div>								    	
+								    </div>
+
+								    <div class="row">
+								    	<div class="col-md-12"><label class="control-label">Languages</label>
+								    		<div class="form-group">
+								    			
+								    			<label class="checkbox-inline">
+												  <input type="checkbox" name="" id="inlineCheckbox1" value="option1"> Khmer
+												</label>
+												<label class="checkbox-inline">
+												  <input type="checkbox" id="inlineCheckbox2" value="option2"> English
+												</label>
+												<label class="checkbox-inline">
+												  <input type="checkbox" id="inlineCheckbox3" value="option3"> French
+												</label>
+												<label class="checkbox-inline">
+												  <input type="checkbox" id="inlineCheckbox3" value="option3"> Chiness
+												</label>
+												<label class="checkbox-inline">
+												  <input type="checkbox" id="inlineCheckbox3" value="option3"> Thai
+												</label>
+												<label class="checkbox-inline">
+												  <input type="checkbox" id="inlineCheckbox3" value="option3"> Vietnam
+												</label>
+												<label class="checkbox-inline">
+												  <input type="checkbox" id="inlineCheckbox3" value="option3"> Other...
+												</label>
+								    		</div>
+								    	</div>								    									    	
+								    </div>
+
+								    <div class="row">
+								    	<div class="col-md-6">
+								    		<div class="form-group">
+						      					<label class="control-label">Hiring Quantities</label>
+						      					<?php echo form_input(array("name"=>"txtHiringQty","id"=>"txtHiringQty","value"=>"","class"=>"form-control","placeholder"=>"Enter Hiring Quantities here..."));?>		      					
+						      				</div>
+								    	</div>
+								    	<div class="col-md-6">
+								    		<div class="form-group">
+						      					<label class="control-label">Category</label>
+						      					<select name="ddlCategory" id="ddlCategory" class="form-control">
+						      						<option value="Priority">PhD</option>
+						      						<option value="Priority">Master</option>
+						      						<option value="Priority">Bachelor</option>
+						      						<option value="Priority">Associate</option>
+						      						<option value="Priority">Vocational</option>
+						      						<option value="Priority">Higth School</option>
+						      						<option value="Priority">Other</option>						      												      												      						
+						      					</select>
+						      				</div>
+								    	</div>
+								    </div>
+
+								    <div class="row">								    	
+								    	<div class="col-md-6">
+								    		<div class="form-group">
+						      					<label class="control-label">Location</label>
+						      					<select name="ddlCategory" id="ddlCategory" class="form-control">
+						      						<option value="Priority">PhD</option>
+						      						<option value="Priority">Master</option>
+						      						<option value="Priority">Bachelor</option>
+						      						<option value="Priority">Associate</option>
+						      						<option value="Priority">Vocational</option>
+						      						<option value="Priority">Higth School</option>
+						      						<option value="Priority">Other</option>						      												      												      						
+						      					</select>
+						      				</div>
+								    	</div>
+								    </div>
+								  </div>
+		      				</div>				        					        						        						        	
+			        	</div>			        	
+					</div><!--==== end other benefit ====-->
+					<div class="row"><!--==== button action ====-->
+						<div class="col-md-12">
+							<button name="btnPreview" class="btn btn-default">Preview</button>
+							<button name="btnPreview" class="btn btn-default">Clear</button>
+							<button name="btnPreview" class="btn btn-default">Save</button>
+							<button name="btnPreview" class="btn btn-success pull-right">Submit</button>
+						</div>
+					</div><!--==== end button action ====-->
+					<div class="page-header"></div>										
+					<div class="row"><!--==== billing information ====-->						
+						<div class="col-md-10" style="margin-top: 25px;">
+							<b>Billing Information</b>
+						</div>
+						<div class="col-md-2">
+							<div class="radio">
+							  <label>
+							    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Need VAT							    
+							  </label>
+							</div>
+							<div class="radio">
+							  <label>
+							    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">No Need VAT							    
+							  </label>
+							</div>							
+						</div>																			
+					</div><!--==== end billing information ====-->
+
+					<div class="row"><!--==== billing information ====-->												
+						<div class="col-md-12">
+							<table class="table table-hover">
+								<tr>
+									<th>No.</th>
+									<th>Job ID</th>
+									<th>Prive/Job</th>
+									<th>Discount</th>
+									<th>Priority</th>
+									<th>Action</th>
+								</tr>
+								<tr>
+									<td>No.</td>
+									<td>Job ID</td>
+									<td>Prive/Job</td>
+									<td>Discount</td>
+									<td>Priority</td>
+									<td><a href="#" style="margin-right:10px;">Edit</a><a href="#">Delete</a></td>									
+								</tr>
+
+								<tr> 
+									<td colspan="4" rowspan="5"></td>									
+									<th>Sub Total :</th>
+									<td>40$</td>
+								</tr>								
+								<tr>
+									
+									<th>Discount :</th>
+									<td>20%</td>
+								</tr>
+								<tr>
+									
+									<th>Total :</th>
+									<td>10$</td>
+								</tr>
+								<tr>
+									
+									<th>VAT :</th>
+									<td>5%</td>
+								</tr>
+								<tr>
+									
+									<th>Grand Total :</th>
+									<td>10$</td>
+								</tr>																
+							</table>					
+						</div>																			
+					</div><!--==== end billing information ====-->
+
+					<div class="row"><!--==== invoice preview and payment ====-->												
+						<div class="col-md-6">
+							<button class="btn btn-default" name="btnInvoicePreview" id="btnInvoicePreview">Invoice Preview</button>				
 						</div>
 
-						<div class="row" style="margin-top: 13px;">
-						 	<div class="col-md-12">
-								<div class="col-md-3">
-									<label>Phone:</label>
-								</div>
-								<div class="col-md-6">
-									<?php echo form_input('phone', set_value('phone'),'class="form-control input-sm" placeholder="Phone Number..." autocomplete="off" ')?>
-								</div>
-
-						 	</div>
-						</div>
-						<div class="row" style="margin-top: 13px;">
-						 	<div class="col-md-12">
-								<div class="col-md-3">
-									<label>Email:</label>
-								</div>
-								<div class="col-md-6">
-									<?php echo form_input('email', set_value('email'),'class="form-control input-sm" placeholder="Your email..." autocomplete="off" ')?>
-								</div>
-
-						 	</div>
-						</div>
-						<div class="row" style="margin-top: 13px;">
-						 	<div class="col-md-12">
-								<div class="col-md-3">
-									<label>Adress:</label>
-								</div>
-								<div class="col-md-6">
-									<?php echo form_input('email', set_value(''),'class="form-control input-sm" placeholder="Your Address..." autocomplete="off" ')?>
-								</div>
-
-						 	</div>
-						</div>
-					</div>
-				 </div>
-
-				 <div class="panel panel-default" style="margin-top: 20px;">
-		        	<div class="panel-body">
-						<div class="row">
-						 	<div class="col-md-12">
-								<div class="col-md-3">
-									<label>Posting Date:</label>
-								</div>
-								<div class="col-md-6">
-									<input type="date" class="form-control input-sm">
-								</div>
-
-						 	</div>
-						</div>
-
-						<div class="row" style="margin-top: 13px;">
-						 	<div class="col-md-12">
-								<div class="col-md-3">
-									<label>End Date:</label>
-								</div>
-								<div class="col-md-6">
-									<input type="date" class="form-control input-sm">
-								</div>
-						 	</div>
-						</div>
-						<div class="row" style="margin-top: 13px;">
-						 	<div class="col-md-12">
-								<div class="col-md-3">
-									<label>Contract:</label>
-								</div>
-								<div class="col-md-6">
-									<select class="form-control input-sm">
-										<option>Full Time</option>
-										<option>Part Time</option>
-										<option>Less Than 3 months</option>
-										<option>From 3 to 6 months</option>
-										<option>From 6 to 12 months</option>
-										<option>More than 1 Years</option>
-										<option>Internship</option>
-									</select>
-								</div>
-
-						 	</div>
-						</div>
-						<div class="row" style="margin-top: 13px;">
-						 	<div class="col-md-12">
-								<div class="col-md-3">
-									<label>Gender:</label>
-								</div>
-								<div class="col-md-6">
-									<select class="form-control input-sm">
-										<option>Male</option>
-										<option>Female</option>
-										<option>Unspecifid</option>
-									</select>
-								</div>
-
-						 	</div>
-						</div>
-						<div class="row" style="margin-top: 13px;">
-						 	<div class="col-md-12">
-								<div class="col-md-3">
-									<label>Age:</label>
-								</div>
-								<div class="col-md-6">
-									<select class="form-control input-sm">
-										<option>18 - 25</option>
-										<option>25 - 32</option>
-										<option>32 - 37</option>
-										<option>37 - 45</option>
-										<option>over 45</option>
-										<option>Unspecified</option>
-									</select>
-								</div>
-
-						 	</div>
-						</div>
-						<div class="row" style="margin-top: 13px;">
-						 	<div class="col-md-12">
-								<div class="col-md-3">
-									<label>Salary Range:</label>
-								</div>
-								<div class="col-md-6">
-									<select class="form-control input-sm">
-										<option>150$ - 300$</option>
-										<option>300$ - 500$</option>
-										<option>500$ - 750$</option>
-										<option>750$ - 1000$</option>
-										<option>over - 1000$</option>
-									</select>
-								</div>
-
-						 	</div>
-						</div>
-						<div class="row" style="margin-top: 13px;">
-						 	<div class="col-md-12">
-								<div class="col-md-3">
-									<label>Years of Experience:</label>
-								</div>
-								<div class="col-md-6">
-									<select class="form-control input-sm">
-										<option>1 - 2 Years</option>
-										<option>2 - 3 Years</option>
-										<option>3 - 5 Years</option>
-										<option>5 - 7 Years</option>
-										<option>7 - 10 Years</option>
-										<option>over - 10 Years</option>
-										<option>unspecified</option>
-									</select>
-								</div>
-
-						 	</div>
-						</div>
-						<div class="row" style="margin-top: 13px;">
-						 	<div class="col-md-12">
-								<div class="col-md-3">
-									<label>Education:</label>
-								</div>
-								<div class="col-md-6">
-									<select class="form-control input-sm">
-										<option>PHD</option>
-										<option>Master</option>
-										<option>Bachelor</option>
-										<option>Associa</option>
-										<option>Vocational</option>
-										<option>Higth School</option>
-										<option>Unspecified</option>
-									</select>
-								</div>
-						 	</div>
-						</div>
-						<div class="row" style="margin-top: 13px;">
-						 	<div class="col-md-12">
-								<div class="col-md-3">
-									<label>Language:</label>
-								</div>
-								<div class="col-md-6">
-									<select class="form-control input-sm">
-										<option>Khmer</option>
-										<option>English</option>
-										<option>Thai</option>
-										<option>Chaniese</option>
-									</select>
-								</div>
-						 	</div>
-						</div>
-						<div class="row" style="margin-top: 13px;">
-						 	<div class="col-md-12">
-								<div class="col-md-3">
-									<label>Hiring Quantities:</label>
-								</div>
-								<div class="col-md-6">
-									<?php echo form_input('quantities', set_value('quantities'),'class="form-control input-sm" placeholder="Your quantities..." autocomplete="off" ')?>
-								</div>
-						 	</div>
-						</div>
 						<div class="row" style="margin-top: 13px;">
 						 	<div class="col-md-12">
 								<div class="col-md-3">
@@ -382,8 +441,11 @@
 	       						
 	       					</tr>
 	       			</table>
+
 				</div>
-		    </div>
-		</div>
-	</div>
-</div>
+					<div class=" page-header"></div>
+					<div class="row">
+						<div class="col-md-12">Invoice Information</div>
+					</div>		
+	</div><!--===== end form post job ======-->
+

@@ -25,6 +25,9 @@
 			} 	
 			$this->load->view('template_frontend/left'); 
 			$this->load->view('register/register',$data);
+
+			/*$this->load->view('template_frontend/advertising');*/
+
 			$this->load->view('template_frontend/footer');
 		}// redirect to register page
 		

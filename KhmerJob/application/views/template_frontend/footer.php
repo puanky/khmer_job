@@ -147,6 +147,7 @@ background-color: #C6C
 	</div><!-- class footer -->
 </footer><!-- this tage footer -->
 
+
 <div id="elevator_item"> 
 	<a id="elevator" onclick="return false;" title="Back To Top"><span class="glyphicon glyphicon-chevron-up"></span></a> 
 </div>
@@ -187,4 +188,5 @@ background-color: #C6C
 	         });
 	    });
 	</script>
+
 
